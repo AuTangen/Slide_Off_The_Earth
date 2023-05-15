@@ -1,3 +1,7 @@
-const Thought = require('./Thought');
+const User = require('./User');
+const Band = require('./Band');
+const Stage = require('./Stage');
 
-module.exports = { Thought };
+
+
+module.exports = { User, Band, Stage };
