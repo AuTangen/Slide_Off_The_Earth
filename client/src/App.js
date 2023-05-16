@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react';
 import { Route, Routes, Navigate } from 'react-router-dom';
-import axios from 'axios'
 import './App.css';
+import axios from 'axios'
+
+
 
 import AddArtist from './components/AddArtist';
 import AddVendor from './components/AddVendor';
@@ -27,7 +29,6 @@ function App(props) {
   },  []);
 
   return (
-
     <>
       <Header user={user} setUser={setUser}/>
         <main>
@@ -46,8 +47,8 @@ function App(props) {
         </main>
       <Footer />
     </>
+  )
 
-  );
 }
 
 export default App;
