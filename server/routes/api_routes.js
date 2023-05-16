@@ -19,7 +19,7 @@ function isAuthenticated(req, res, next) {
 
 // Get all bands OR get bands based on search query (possibly?)
 router.get('/artists', async (req, res) => {
-    const bands = await Band.find().populate('user')
+    const bands = await Band.find()
     res.send(bands)
 })
 
