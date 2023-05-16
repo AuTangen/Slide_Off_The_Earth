@@ -8,14 +8,6 @@ function AddArtist(props) {
             <div class='add-artist-container'>
 
             <h2>Add Artist</h2>
-            <h2>Add Artist</h2>
-            <h2>Add Artist</h2>
-            <h2>Add Artist</h2>
-            <h2>Add Artist</h2>
-            <h2>Add Artist</h2>
-            <h2>Add Artist</h2>
-            <h2>Add Artist</h2>
-            <h2>Add Artist</h2>
 
                 <form>
 

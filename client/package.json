@@ -9,7 +9,6 @@
     "@testing-library/user-event": "^12.1.10",
     "axios": "^1.4.0",
     "react": "^17.0.1",
-    "react-cloudinary-upload-widget": "^1.7.6",
     "react-dom": "^17.0.1",
     "react-icons": "^4.8.0",
     "react-router-dom": "^6.11.1",

@@ -1,6 +1,6 @@
 import { NavLink, useNavigate } from 'react-router-dom';
 
-function Artist(props) {
+function Artists(props) {
     // const navigate = useNavigate();
 
     return (
@@ -18,4 +18,4 @@ function Artist(props) {
 
 };
 
-export default Artist;
+export default Artists;
