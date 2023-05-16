@@ -32,17 +32,37 @@ function Header(props) {
                </li>
                
                <li>
-                <NavLink to='/stages'>Stages</NavLink>
+                <NavLink to='/stages'
+                className={({ isActive, isPending }) =>
+                  isPending ? 'pending' : isActive ? 'active' : ''
+                }
+                >Stages</NavLink>
                </li>
+
                <li>
-                <NavLink to='/vendors'>Vendors</NavLink>
+                <NavLink to='/vendors'
+                className={({ isActive, isPending }) =>
+                  isPending ? 'pending' : isActive ? 'active' : ''
+                }
+                >Vendors</NavLink>
                </li>
+
                <li>
-                <NavLink to='/news'>News</NavLink>
+                <NavLink to='/news'
+                className={({ isActive, isPending }) =>
+                  isPending ? 'pending' : isActive ? 'active' : ''
+                }
+                >News</NavLink>
                </li>
+
                <li>
-                <NavLink to='./faq'>FAQ</NavLink>
+                <NavLink to='/faq'
+                className={({ isActive, isPending }) =>
+                  isPending ? 'pending' : isActive ? 'active' : ''
+                }
+                >Faq</NavLink>
                </li>
+
                <li>
                 <NavLink to='./login'>Login</NavLink>
                </li>

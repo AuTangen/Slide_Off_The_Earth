@@ -31,7 +31,10 @@ function App(props) {
         <Routes>
           <Route path='/' element={<Home user={user} setUser={setUser}/> } />
           <Route path='/artists' element={<Artists user={user} setUser={setUser}/> } />
-          <Route path='stages' element={<Stages user={user} setUser={setUser}/> } />
+          <Route path='/stages' element={<Stages user={user} setUser={setUser}/> } />
+          <Route path='/vendors' element={<Vendors user={user} setUser={setUser}/> } />
+          <Route path='/news' element={<News user={user} setUser={setUser}/> } />
+          <Route path='/faq' element={<FAQ user={user} setUser={setUser}/> } />
         </Routes>
       <Footer />
     </>
