@@ -14,10 +14,10 @@ function Footer(props) {
 
             <div className="footer-nav">
                 <ul className="footer-ul">
-                    <li><AiOutlineFacebook className="socials" size={30} url='http://facebook.com' /></li>
-                <li><AiOutlineTwitter className="socials" size={30} url='https://twitter.com/' /></li>
-                <li><AiOutlineInstagram className="socials" size={30} url='https://instagram.com' /></li>
-                <li><FaTiktok className="socials" size={30} url='https://tiktok.com' /></li>
+                    <li><a className="socials" href="https://facebook.com" target="_blank" without rel="noreferrer"><AiOutlineFacebook size={30} /></a></li>
+                <li><a className="socials" href="https://twitter.com/slideoffthefest" target="_blank" without rel="noreferrer"><AiOutlineTwitter size={30} /></a></li>
+                <li><a className="socials" href="https://instagram.com" target="_blank" without rel="noreferrer"><AiOutlineInstagram size={30} /></a></li>
+                <li><a className="socials" href="https://tiktok.com" target="_blank" without rel="noreferrer"><FaTiktok size={30} /></a></li>
                 </ul>
             </div>
             </div>
