@@ -77,7 +77,9 @@ router.put('fav/:id', isAuthenticated, async (req, res) => {
 })
 
 
-// Create a band (pending Multer configuration/Austen)
+// Create a band
+router.post('/artist')
+
 
 // Delete a band
 router.delete('/artist/:id', isAuthenticated, async (req, res) => {
