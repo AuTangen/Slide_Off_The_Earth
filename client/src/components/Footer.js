@@ -1,20 +1,23 @@
 import { NavLink, useNavigate } from 'react-router-dom';
 
-import { SocialIcon } from 'react-social-icons';
+import { AiOutlineFacebook, AiOutlineTwitter, AiOutlineInstagram } from "react-icons/ai";
+import { FaTiktok } from "react-icons/fa";
 
 function Footer(props) {
     // const navigate = useNavigate();
 
     return (
-        <footer>
+        <footer className="footer-wrap">
             
-            <p>&copy; 2023 SlideOffTheEarth</p>
+            <p className="footer">&copy; 2023 SlideOffTheEarth</p>
 
-            <nav>
-                <SocialIcon url='http://facebook.com' />
-                <SocialIcon url='https://twitter.com/' />
-                <SocialIcon url='https://instagram.com' />
-                <SocialIcon url='https://tiktok.com' />
+            <nav className="block py-2">
+                <ul className="flex">
+                    <li><AiOutlineFacebook className="socials" size={30} url='http://facebook.com' /></li>
+                <li><AiOutlineTwitter className="socials" size={30} url='https://twitter.com/' /></li>
+                <li><AiOutlineInstagram className="socials" size={30} url='https://instagram.com' /></li>
+                <li><FaTiktok className="socials" size={30} url='https://tiktok.com' /></li>
+                </ul>
             </nav>
 
         </footer>

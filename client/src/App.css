@@ -20,7 +20,7 @@ html {
 }
 
 .text-accent {
-  color: #00FFCA;
+  color: yellow;
 }
 
 .text-accent-secondary {
@@ -28,6 +28,10 @@ html {
 }
 
 /* Global Classes */
+body {
+  background-color: #088395;
+}
+
 li {
   @apply px-4;
   @apply cursor-pointer;
@@ -54,20 +58,8 @@ header a:hover {
   @apply text-gray-200;
 }
 
-#s {
-  margin-left: 0.1rem;
-}
-
-header a, header nav {
-  padding: 2% 2% 0 2%;
-}
-
-nav li a {
-  @apply px-4 py-5 text-lg;
-}
-
-nav li a:hover {
-  color: #00FFCA;
+li a:hover {
+  color: yellow;
 }
 
 .mobile-nav {
@@ -160,6 +152,10 @@ h1 {
 
 .footer {
   @apply py-2 text-center text-xs;
+}
+
+.socials:hover {
+  color: yellow;
 }
 
 /* Media Queries */
