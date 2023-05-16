@@ -22,7 +22,7 @@ function App(props) {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    axios.get('/auth/userauth', { withCredentials: true })
+    axios.get('/auth/userauth')
     .then(res => {
       setUser(res.data.user)
     })
@@ -39,8 +39,8 @@ function App(props) {
           <Route path='/vendors' element={<Vendors user={user} setUser={setUser}/> } />
           <Route path='/news' element={<News user={user} setUser={setUser}/> } />
           <Route path='/faq' element={<FAQ user={user} setUser={setUser}/> } />
-          <Route path='/login' element={<Login user={user} setUser={setUser}/> } />
-          <Route path='/register' element={<Register user={user} setUser={setUser}/> } />
+          <Route path='/login' element={!user ?<Login user={user} setUser={setUser}/>: <Navigate to="/"/>}/>
+          <Route path='/register' element={!user ? <Register user={user} setUser={setUser}/>: <Navigate to="/"/> } />
           <Route path='/addartist' element={<AddArtist user={user} setUser={setUser}/> } />
           <Route path='/addvendor' element={<AddVendor user={user} setUser={setUser}/> } />
         </Routes>
