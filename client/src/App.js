@@ -20,6 +20,23 @@ function App() {
 
     <>
       <Header />
+
+      <Artists />
+      <Stages />
+      <Vendors />
+      <News />
+      
+        {/* <Routes>
+          <Route path='/addartist' element={<AddArtist/>} />
+          <Route path='/addvendor' element={<AddVendor/>} />
+          <Route path='/artist' element={<Artists/>} />
+          <Route path='/faq' element={<FAQs/>} />
+          <Route path='/news' element={<News/>} />
+          <Route path='/stages' element={<Stages/>} />
+          <Route path='/vendors' element={<AddVendor/>} />
+        </Routes> */}
+
+      <Footer />
     </>
 
   );
