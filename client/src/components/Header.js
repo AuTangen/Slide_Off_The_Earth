@@ -67,8 +67,13 @@ function Header(props) {
                </li>
 
                <li>
-                <NavLink to='./login'>Login</NavLink>
+                <NavLink to='/login'
+                className={({ isActive, isPending }) =>
+                  isPending ? 'pending' : isActive ? 'active' : ''
+                }
+                >Login</NavLink>
                </li>
+
             </ul>
 
       {/* Hamburger Menu */}
