@@ -20,7 +20,7 @@ html {
 }
 
 .text-accent {
-  color: yellow;
+  @apply text-yellow-300
 }
 
 .text-accent-secondary {
@@ -58,49 +58,25 @@ li {
 }
 
 /* Nav */
+.header {
+  @apply flex w-screen justify-between items-center px-4;
+}
+
 header a:hover {
   @apply text-gray-200;
 }
 
+.logo {
+  @apply flex py-2 w-[95%];
+}
+
 li a:hover {
-  color: yellow;
+  @apply text-yellow-500;
 }
 
 .mobile-nav {
   @apply block md:hidden fixed top-10 py-2 bg-gray-900 duration-500;
   width: 11rem;
-}
-
-.menu-arrow {
-  @apply pl-1 inline-block text-white;
-}
-
-.socials a:hover {
-  @apply text-white;
-}
-
-/* Hero */
-
-.hero-wrap {
-  max-height: 400px;
-}
-
-h1 {
-  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
-  line-height: 1.5 !important
-}
-
-.hero-img {
-  visibility: hidden;
-}
-
-.hero-info {
-  margin-bottom: 0;
-  padding-bottom: 0;
-}
-
-.portfolio-btn:hover {
-  @apply bg-transparent text-white;
 }
 
 /* About */
@@ -113,40 +89,6 @@ h1 {
   width: 40%;
   background: #fff;
   border-radius: 50%;
-}
-
-/* Portfolio */
-
-.projects img {
-  width: 100%;
-}
-
-.port-img img {
-  width: 100%;
-}
-
-.portfolio-wrap {
-  @apply container mx-auto grid items-center md:justify-between;
-}
-
-/* Publications */
-
-.pub-links a {
-  font-size: 1.3rem;
-}
-.pub-links a:hover {
-  color: #ccc;
-}
-
-.subheading {
-  color: #05BFDB;
-  justify-content: end;
-}
-
-/* Contact */
-
-.contact-email:hover {
-  @apply animate-[pulse_1s_infinite];
 }
 
 /* Footer */
@@ -187,25 +129,20 @@ form input {
 /* Media Queries */
 
 @media (min-width: 768px) {
+  body {
+    @apply bg-crowd-lg;
+  }
+
+  .header {
+    @apply fixed w-full h-[80px] flex justify-between items-center px-4 bg-secondary text-white;
+  }
+
   .mobile-nav {
     display: none;
   }
 
-  .hero-wrap-wrap {
-    padding-top: 0;
-    margin-top: 0;
-    min-height: 100%;
-  }
-
-  .hero-wrap {
-    padding-top: 0;
-    margin-top: 0;
-    min-height: 768px;
-  }
-
-  .hero-img {
-    visibility: visible;
-    width: 100%;
+  .logo {
+    @apply flex py-0 px-2 w-[300px];
   }
 
   .about-wrap {
