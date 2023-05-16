@@ -7,6 +7,17 @@ function Artist(props) {
         <>
             
             <h2>ARTISTS</h2>
+            <h2>ARTISTS</h2>
+            <h2>ARTISTS</h2>
+            <h2>ARTISTS</h2>
+            <h2>ARTISTS</h2>
+            <h2>ARTISTS</h2>
+            <h2>ARTISTS</h2>
+            <h2>ARTISTS</h2>
+            <h2>ARTISTS</h2>
+            <h2>ARTISTS</h2>
+            <h2>ARTISTS</h2>
+            <h2>ARTISTS</h2>
 
             <button>Add</button>
 
