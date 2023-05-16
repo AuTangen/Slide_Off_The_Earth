@@ -5,6 +5,8 @@ function Artists(props) {
 
     return (
         <>
+
+
             
             <h2>ARTISTS</h2>
 
