@@ -49,12 +49,8 @@ li {
   @apply mb-5;
 }
 
-.rts-btn {
-  @apply pr-4 inline-block text-white;
-}
-
-.rts-btn:hover {
-  @apply animate-[bounce_1s_infinite];
+.form-element {
+  @apply block w-full rounded-md border-0 py-1.5 px-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-[#088395] sm:text-sm sm:leading-6;
 }
 
 /* Nav */
@@ -89,6 +85,14 @@ li a:hover {
   width: 40%;
   background: #fff;
   border-radius: 50%;
+}
+
+/* Add Artist */
+.add-artist {
+  @apply text-4xl text-center;
+}
+.add-artist-container {
+  @apply space-y-12 w-full h-full px-6 mt-6 text-white;
 }
 
 /* Footer */
