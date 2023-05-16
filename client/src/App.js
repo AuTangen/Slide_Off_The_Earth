@@ -26,7 +26,7 @@ function App() {
 
     <>
       <Header />
-
+    <main>
       <Artists />
       <Stages />
       <Vendors />
@@ -42,7 +42,7 @@ function App() {
           <Route path='/stages' element={<Stages/>} />
           <Route path='/vendors' element={<AddVendor/>} />
         </Routes> */}
-
+    </main>
       <Footer />
     </>
 
