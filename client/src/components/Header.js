@@ -21,7 +21,7 @@ function Header(props) {
 
             {/* Desktop Nav */}
             <ul className="hidden md:flex">
-               <li>Welcome (username)!</li>
+            {props.user &&<li>Welcome {props.user.username}</li>}
                <li>
                 <NavLink to='/'>Home</NavLink>
                </li>
