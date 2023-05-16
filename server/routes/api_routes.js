@@ -89,14 +89,15 @@ router.post('/artist', isAuthenticated, async (req, res) => {
             ...req.body,
             user: user_id
         })
-        const user = await User.findOneAndUpdate({
-            _id: user_id
-        }, {
-            '$push': {
-                favorites: band._id
-            }
-        }, { new: true }).populate('favorites')
-        res.send({ user })
+        // const user = await User.findOneAndUpdate({
+        //     _id: user_id
+        // }, {
+        //     '$push': {
+        //         favorites: band._id
+        //     }
+        // }, { new: true }).populate('favorites')
+        res.send({band: band })
+        console.log({band: band })
     } catch (err) {
         res.status(500).send({ error: err })
     }

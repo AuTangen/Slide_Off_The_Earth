@@ -12,6 +12,9 @@ function Artists(props) {
             <h2>ARTISTS</h2>
             <h2>ARTISTS</h2>
             <h2>ARTISTS</h2>
+
+
+            
             <h2>ARTISTS</h2>
             
             {props.user && (<button id='add-band'>Add Band</button>)}

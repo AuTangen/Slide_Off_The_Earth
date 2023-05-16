@@ -1,5 +1,3 @@
-
-
 const { Schema, model } = require('mongoose')
 
 const bandSchema = new Schema({
@@ -12,7 +10,7 @@ const bandSchema = new Schema({
         required: true
     },
     stage: {
-        type: Schema.Types.ObjectId,
+        type: String,
         ref: 'stage'
     },
     day: {

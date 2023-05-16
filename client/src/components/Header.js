@@ -21,7 +21,7 @@ function Header(props) {
 
             {/* Desktop Nav */}
             <ul className="hidden md:flex">
-               <li>Welcome (username)!</li>
+            {props.user &&<li>Welcome {props.user.username}</li>}
                <li>
                 <NavLink to='/'>Home</NavLink>
                </li>
@@ -83,9 +83,9 @@ function Header(props) {
 
       {/* Mobile Nav */}
         <ul className={!nav ? 'hidden' : 'absolute top-0 left-0 w-full h-screen bg-accent text-accent flex flex-col justify-center items-center'}>
-          <li className='py-6 text-4xl'>
-            Welcome, (username)!
-          </li>
+        {props.user && <li className='py-6 text-4xl'>
+            Welcome, {props.user.username}
+          </li>}
           <li className='py-6 text-4xl'>
             <NavLink to='/'>Home</NavLink>
           </li>
