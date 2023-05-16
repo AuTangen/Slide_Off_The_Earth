@@ -7,7 +7,10 @@ function AddArtist(props) {
         <>
             <div class='add-artist-container'>
 
+
             <p className="add-artist">Add Artist</p>
+      
+            <h2>Add Artist</h2>
 
                 <form className="flex flex-col mb-auto mt-4 justify-center align-middle">
                 <div class="grid grid-cols-1 gap-x-4 gap-y-2 sm:grid-cols-4">
@@ -66,15 +69,3 @@ function AddArtist(props) {
 };
 
 export default AddArtist;
-
-// {props.admin && ( 
-// <form onSubmit={createDrink}>
-// <h2>Add a Drink</h2>
-// {errMessage && <p>{errMessage}</p>}
-// <input name='name' value={formState.name} onChange={handleChange} type="text" placeholder="Enter the name of your drink"></input>
-// <input name='category' value={formState.category} onChange={handleChange} type="text" placeholder="Enter a category"></input>
-// <input name='ingredients' value={formState.ingredients} onChange={handleChange} type="text" placeholder="Enter the ingredients"></input>
-// <textarea name='instructions' value={formState.instructions} onChange={handleChange} type="text" placeholder="Instructions"></textarea>
-// <button>Save Drink</button>
-// </form>
-// )}

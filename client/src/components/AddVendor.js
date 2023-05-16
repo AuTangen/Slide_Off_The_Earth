@@ -8,12 +8,6 @@ function AddVendor(props) {
             <div class='add-artist-container'>
 
             <h2>Add Vendor</h2>
-            <h2>Add Vendor</h2>
-            <h2>Add Vendor</h2>
-            <h2>Add Vendor</h2>
-            <h2>Add Vendor</h2>
-            <h2>Add Vendor</h2>
-            <h2>Add Vendor</h2>
 
                 <form>
 

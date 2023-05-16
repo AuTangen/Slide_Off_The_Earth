@@ -1,3 +1,5 @@
+
+
 const { Schema, model } = require('mongoose')
 
 const bandSchema = new Schema({
@@ -6,7 +8,7 @@ const bandSchema = new Schema({
         required: true
     },
     artists: {
-        type: [String],
+        type: String,
         required: true
     },
     stage: {
@@ -14,15 +16,15 @@ const bandSchema = new Schema({
         ref: 'stage'
     },
     day: {
-        type: Date,
+        type: String,
         
     },
     time: {
         type: String,
         
     },
-    setlist: {
-        type: [String],
+     setlist: {
+        type: String,
         
     },
 
