@@ -8,7 +8,8 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: theme => ({
-        'crowd': "url('./assets/footer_background.png')"
+        'crowd-lg': "url('./assets/footer_background.png')",
+        'crowd': "url('./assets/crowd_background.png')"
       }),
       backgroundSize: {
         'contain': 'contain',
