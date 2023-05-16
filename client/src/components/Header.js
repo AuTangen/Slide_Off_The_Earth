@@ -16,6 +16,9 @@ function Header(props) {
             <img src={SOTE} alt="Slide Off The Earth Logo" className="flex py-0 px-2 w-[300px]" />
             </a>
 
+          
+
+
             {/* Desktop Nav */}
             <ul className="hidden md:flex">
                <li>Welcome (username)!</li>
