@@ -7,6 +7,15 @@ function Vendors(props) {
         <>
             
             <h2>VENDORS</h2>
+            <h2>VENDORS</h2>
+            <h2>VENDORS</h2>
+            <h2>VENDORS</h2>
+            <h2>VENDORS</h2>
+            <h2>VENDORS</h2>
+            <h2>VENDORS</h2>
+            <h2>VENDORS</h2>
+
+            {props.user && (<button id='add-vendor'>Add Vendor</button>)}
 
             <div class='vendors-container'>
                 <div>Tijuana Flatts</div>

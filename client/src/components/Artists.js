@@ -5,10 +5,16 @@ function Artists(props) {
 
     return (
         <>
-            
             <h2>ARTISTS</h2>
-
-            {/* {props.user.isAdmin && (<button>Add Band</button>)} */}
+            <h2>ARTISTS</h2>
+            <h2>ARTISTS</h2>
+            <h2>ARTISTS</h2>
+            <h2>ARTISTS</h2>
+            <h2>ARTISTS</h2>
+            <h2>ARTISTS</h2>
+            <h2>ARTISTS</h2>
+            
+            {props.user && (<button id='add-band'>Add Band</button>)}
             <div class='artist-container'>
                 <div>Band 1</div>
             </div>

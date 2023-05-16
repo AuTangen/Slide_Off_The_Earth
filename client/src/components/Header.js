@@ -67,11 +67,11 @@ function Header(props) {
                </li>
 
                <li>
-                <NavLink to='/login'
-                className={({ isActive, isPending }) =>
-                  isPending ? 'pending' : isActive ? 'active' : ''
-                }
-                >Login</NavLink>
+               {props.user ? (
+                  <NavLink to='/logout'>Logout</NavLink>
+                ) : (
+                  <NavLink to='/login'>Login</NavLink>
+                )}
                </li>
 
             </ul>
