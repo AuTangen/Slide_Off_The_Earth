@@ -8,6 +8,8 @@ function Header(props) {
 
     const handleClick = () => setNav(!nav);
 
+    const { toggleView } = props
+
     return (
         <header className="fixed w-full h-[80px] flex justify-between items-center px-4 bg-secondary text-white">
           <a href="/" className="logo">
@@ -23,21 +25,47 @@ function Header(props) {
                <li>
                 <NavLink to='/'>Home</NavLink>
                </li>
+               
                <li>
-                <NavLink to='/artists'>Artists</NavLink>
+                <NavLink to='/artists'
+                className={({ isActive, isPending }) =>
+                  isPending ? 'pending' : isActive ? 'active' : ''
+                }
+                >Artists</NavLink>
                </li>
+               
                <li>
-                <NavLink to='/stages'>Stages</NavLink>
+                <NavLink to='/stages'
+                className={({ isActive, isPending }) =>
+                  isPending ? 'pending' : isActive ? 'active' : ''
+                }
+                >Stages</NavLink>
                </li>
+
                <li>
-                <NavLink to='/vendors'>Vendors</NavLink>
+                <NavLink to='/vendors'
+                className={({ isActive, isPending }) =>
+                  isPending ? 'pending' : isActive ? 'active' : ''
+                }
+                >Vendors</NavLink>
                </li>
+
                <li>
-                <NavLink to='/news'>News</NavLink>
+                <NavLink to='/news'
+                className={({ isActive, isPending }) =>
+                  isPending ? 'pending' : isActive ? 'active' : ''
+                }
+                >News</NavLink>
                </li>
+
                <li>
-                <NavLink to='./faq'>FAQ</NavLink>
+                <NavLink to='/faq'
+                className={({ isActive, isPending }) =>
+                  isPending ? 'pending' : isActive ? 'active' : ''
+                }
+                >Faq</NavLink>
                </li>
+
                <li>
                 <NavLink to='./login'>Login</NavLink>
                </li>

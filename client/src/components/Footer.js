@@ -7,18 +7,20 @@ function Footer(props) {
     // const navigate = useNavigate();
 
     return (
-        <footer className="footer-wrap">
+    <footer className="footer-wrap">
             
-            <p className="footer">&copy; 2023 SlideOffTheEarth</p>
+        <div className="footer">
+            <p className="copyright">&copy; 2023 SlideOffTheEarth</p>
 
-            <nav className="block py-2">
-                <ul className="flex">
+            <nav className="footer-nav">
+                <ul className="footer-ul">
                     <li><AiOutlineFacebook className="socials" size={30} url='http://facebook.com' /></li>
                 <li><AiOutlineTwitter className="socials" size={30} url='https://twitter.com/' /></li>
                 <li><AiOutlineInstagram className="socials" size={30} url='https://instagram.com' /></li>
                 <li><FaTiktok className="socials" size={30} url='https://tiktok.com' /></li>
                 </ul>
             </nav>
+            </div>
 
         </footer>
     )
