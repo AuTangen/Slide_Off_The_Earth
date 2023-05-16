@@ -30,6 +30,7 @@ function App(props) {
 
     <>
       <Header user={user} setUser={setUser}/>
+        <main>
         <Routes>
           <Route path='/' element={<Home user={user} setUser={setUser}/> } />
           <Route path='/artists' element={<Artists user={user} setUser={setUser}/> } />
@@ -40,6 +41,7 @@ function App(props) {
           <Route path='/login' element={<Login user={user} setUser={setUser}/> } />
           <Route path='/register' element={<Register user={user} setUser={setUser}/> } />
         </Routes>
+        </main>
       <Footer />
     </>
 

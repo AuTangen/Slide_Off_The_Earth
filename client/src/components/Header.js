@@ -11,9 +11,9 @@ function Header(props) {
     const { toggleView } = props
 
     return (
-        <header className="fixed w-full h-[80px] flex justify-between items-center px-4 bg-secondary text-white">
-          <a href="/" className="logo">
-            <img src={SOTE} alt="Slide Off The Earth Logo" className="flex py-0 px-2 w-[300px]" />
+        <header className="header">
+          <a href="/">
+            <img src={SOTE} alt="Slide Off The Earth Logo" className="logo" />
             </a>
 
           
@@ -77,7 +77,7 @@ function Header(props) {
             </ul>
 
       {/* Hamburger Menu */}
-      <div onClick={handleClick} className='md:hidden z-20 mt-4'>
+      <div onClick={handleClick} className='md:hidden z-20 mt-4 text-white'>
         {!nav ? <FaBars /> : <FaTimes />}
       </div>
 
