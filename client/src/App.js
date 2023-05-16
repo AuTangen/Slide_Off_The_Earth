@@ -40,6 +40,8 @@ function App(props) {
           <Route path='/faq' element={<FAQ user={user} setUser={setUser}/> } />
           <Route path='/login' element={<Login user={user} setUser={setUser}/> } />
           <Route path='/register' element={<Register user={user} setUser={setUser}/> } />
+          <Route path='/addartist' element={<AddArtist user={user} setUser={setUser}/> } />
+          <Route path='/addvendor' element={<AddVendor user={user} setUser={setUser}/> } />
         </Routes>
         </main>
       <Footer />
