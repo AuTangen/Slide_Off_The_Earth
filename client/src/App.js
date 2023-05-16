@@ -10,7 +10,9 @@ import FAQ from './components/FAQ';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import Home from './components/Home';
+import Login from './components/Login';
 import News from './components/News';
+import Register from './components/Register'
 import Stages from './components/Stages';
 import Vendors from './components/Vendors';
 import Login from './components/Login';
