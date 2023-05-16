@@ -13,6 +13,8 @@ import Home from './components/Home';
 import News from './components/News';
 import Stages from './components/Stages';
 import Vendors from './components/Vendors';
+import Login from './components/Login';
+import Register from './components/Register';
 
 function App(props) {
   const [user, setUser] = useState(null);
@@ -28,6 +30,7 @@ function App(props) {
 
     <>
       <Header user={user} setUser={setUser}/>
+        <main>
         <Routes>
           <Route path='/' element={<Home user={user} setUser={setUser}/> } />
           <Route path='/artists' element={<Artists user={user} setUser={setUser}/> } />
@@ -35,7 +38,10 @@ function App(props) {
           <Route path='/vendors' element={<Vendors user={user} setUser={setUser}/> } />
           <Route path='/news' element={<News user={user} setUser={setUser}/> } />
           <Route path='/faq' element={<FAQ user={user} setUser={setUser}/> } />
+          <Route path='/login' element={<Login user={user} setUser={setUser}/> } />
+          <Route path='/register' element={<Register user={user} setUser={setUser}/> } />
         </Routes>
+        </main>
       <Footer />
     </>
 

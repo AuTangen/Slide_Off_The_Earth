@@ -10,7 +10,8 @@ function Footer(props) {
     <footer className="footer-wrap">
             
         <div className="footer">
-            <p className="copyright">&copy; 2023 SlideOffTheEarth</p>
+            &copy; 2023 SlideOffTheEarth
+            </div>
 
             <nav className="footer-nav">
                 <ul className="footer-ul">
@@ -20,7 +21,6 @@ function Footer(props) {
                 <li><FaTiktok className="socials" size={30} url='https://tiktok.com' /></li>
                 </ul>
             </nav>
-            </div>
 
         </footer>
     )
