@@ -13,9 +13,15 @@ import Stages from './components/Stages';
 import Vendors from './components/Vendors';
 
 function App() {
+  // const [user, setUser] = useState(null)
+ 
   
-   
-  
+  // useEffect(() => {
+  //   axios.get('/auth/userauth').then(res => {
+  //     setUser(res.data.user)
+  //   })
+  // }, []);
+
   return (
 
     <>
@@ -25,7 +31,8 @@ function App() {
       <Stages />
       <Vendors />
       <News />
-      
+     
+
         {/* <Routes>
           <Route path='/addartist' element={<AddArtist/>} />
           <Route path='/addvendor' element={<AddVendor/>} />

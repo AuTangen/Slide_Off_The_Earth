@@ -8,8 +8,7 @@ function Artist(props) {
             
             <h2>ARTISTS</h2>
 
-            <button>Add</button>
-
+            {/* {props.user.isAdmin && (<button>Add Band</button>)} */}
             <div class='artist-container'>
                 <div>Band 1</div>
             </div>
