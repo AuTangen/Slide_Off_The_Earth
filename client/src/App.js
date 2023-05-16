@@ -14,6 +14,8 @@ import Header from './components/Header';
 import Home from './components/Home';
 import Login from './components/Login';
 import News from './components/News';
+import OneArtist from './components/OneArtist';
+import OneVendor from './components/OneVendor'
 import Register from './components/Register'
 import Stages from './components/Stages';
 import Vendors from './components/Vendors';
@@ -43,6 +45,8 @@ function App(props) {
           <Route path='/register' element={<Register user={user} setUser={setUser}/> } />
           <Route path='/addartist' element={<AddArtist user={user} setUser={setUser}/> } />
           <Route path='/addvendor' element={<AddVendor user={user} setUser={setUser}/> } />
+          <Route path='/artist' element={<OneArtist user={user} setUser={setUser}/> } />
+          <Route path='/vendor' element={<OneVendor user={user} setUser={setUser}/> } />
         </Routes>
         </main>
       <Footer />
