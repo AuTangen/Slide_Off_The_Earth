@@ -13,12 +13,21 @@ function isAuthenticated (req, res, next) {
 }
 
 // Get all bands OR get bands based on search query (possibly?)
-router.get('/artist', async (req, res) => {
+router.get('/artists', async (req, res) => {
     const bands = await Band.find().populate('user')
     res.send(bands)
 })
 
+// Get one band by id
+router.get('/artists/:id', async (req, res) => {
+    const bands = await Band. findById(req.params.id).populate({
+        path: 'user',
+        select: '-password'
+    })
+})
 
+// Get favorite bands for user
+router.get('/artists/user') 
 
 
 
