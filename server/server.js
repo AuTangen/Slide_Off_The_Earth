@@ -13,12 +13,12 @@ app.use(express.json())
 
 app.use(express.static('../client/build'));
 
-// app.use(session({
-  //   secret: process.env.SESSION_SECRET,
-  //   resave: false,
-  //   saveUninitialized: true,
-  //   cookie: {secure: process.env.PORT ? true : false }
-  // }))
+app.use(session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: true,
+    cookie: {secure: process.env.PORT ? true : false }
+  }))
 
 app.use('/api', api_routes)
 app.use('/auth', auth_routes)
