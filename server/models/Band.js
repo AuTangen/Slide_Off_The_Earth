@@ -14,7 +14,7 @@ const bandSchema = new Schema({
         ref: 'stage'
     },
     day: {
-        type: Date,
+        type: String,
         
     },
     time: {

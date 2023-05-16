@@ -117,12 +117,14 @@ li a:hover {
 }
 
 form {
+  margin-top: 10%;
   max-width: 350px;
   display: flex;
   flex-direction: column;
 }
 
 form input {
+  
   margin-bottom: 10px;
 }
 
