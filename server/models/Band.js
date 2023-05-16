@@ -21,10 +21,7 @@ const bandSchema = new Schema({
         type: String,
         
     },
-    uploaded_file: {
-        type: String
-    },
-    setlist: {
+     setlist: {
         type: String,
         
     },
