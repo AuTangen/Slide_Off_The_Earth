@@ -26,6 +26,11 @@ const userSchema = new Schema({
     min: 6,
 
   },
+
+  isAdmin: {
+    type: Boolean,
+    default: false
+  },
   favorites: [
     {
       type: Schema.Types.ObjectId,
