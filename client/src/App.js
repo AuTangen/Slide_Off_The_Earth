@@ -15,8 +15,6 @@ import News from './components/News';
 import Register from './components/Register'
 import Stages from './components/Stages';
 import Vendors from './components/Vendors';
-import Login from './components/Login';
-import Register from './components/Register';
 
 function App(props) {
   const [user, setUser] = useState(null);

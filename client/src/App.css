@@ -93,11 +93,11 @@ li a:hover {
 
 /* Footer */
 .footer-wrap {
-  @apply flex flex-col justify-center items-center px-5 pt-5 pb-1 bg-secondary text-white;
+  @apply fixed inset-x-0 bottom-0;
 }
 
 .footer {
-  @apply py-2 text-center text-xs;
+  @apply flex justify-between items-center px-5 bg-secondary text-white py-2;
 }
 
 /* .copyright {
@@ -105,11 +105,11 @@ li a:hover {
 } */
 
 .footer-nav {
-  @apply block py-2;
+  @apply justify-end items-center;
 }
 
 .footer-ul {
-  @apply flex;
+  @apply flex justify-between;;
 }
 
 .socials:hover {
@@ -139,11 +139,7 @@ li a:hover {
     @apply container mx-auto grid md:grid-cols-2 items-center justify-center md:justify-between;
   }
 
-  .footer-wrap {
-    @apply flex flex-row justify-between items-center px-5 py-2 bg-secondary text-white;
-  }
-
   .footer {
-    @apply py-2 text-center justify-between text-lg;
+    @apply text-lg;
   }
 }
