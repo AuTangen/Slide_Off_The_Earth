@@ -1,4 +1,7 @@
 import { NavLink, useNavigate } from 'react-router-dom';
+import axios from "axios";
+import { useEffect, useState } from "react";
+
 
 function Login(props) {
     // const navigate = useNavigate();
@@ -21,7 +24,7 @@ function Login(props) {
         console.log('submitted!')
         try {
             const res = await axios.post('/auth/login', formState);
-            setUser(res.data.user)
+            props.setUser(res.data.user)
             console.log(res.data.user)
         } catch (err) {
             if (err.code === 402) {
