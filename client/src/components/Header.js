@@ -9,13 +9,13 @@ function Header(props) {
     const handleClick = () => setNav(!nav);
 
     return (
-        <header className="fixed w-full h-[80px] flex justify-between items-center px-4 bg-primary text-white">
-          <a href="/">
+        <header className="fixed w-full h-[80px] flex justify-between items-center px-4 bg-secondary text-white">
+          <a href="/" className="logo">
             <img src={SOTE} alt="Slide Off The Earth Logo" className="flex py-0 px-2 w-[300px]" />
             </a>
 
             {/* Desktop Nav */}
-            <ul className="hidden md:flex py-8 pr-6">
+            <ul className="hidden md:flex">
                <li>Welcome (username)!</li>
                <li>
                 <NavLink to='/'>Home</NavLink>
@@ -46,7 +46,7 @@ function Header(props) {
       </div>
 
       {/* Mobile Nav */}
-        <ul className={!nav ? 'hidden' : 'absolute top-0 left-0 w-full h-screen bg-[#09455d] text-white flex flex-col justify-center items-center'}>
+        <ul className={!nav ? 'hidden' : 'absolute top-0 left-0 w-full h-screen bg-accent text-accent flex flex-col justify-center items-center'}>
           <li className='py-6 text-4xl'>
             Welcome, (username)!
           </li>
