@@ -158,6 +158,16 @@ h1 {
   color: yellow;
 }
 
+form {
+  max-width: 350px;
+  display: flex;
+  flex-direction: column;
+}
+
+form input {
+  margin-bottom: 10px;
+}
+
 /* Media Queries */
 
 @media (min-width: 768px) {

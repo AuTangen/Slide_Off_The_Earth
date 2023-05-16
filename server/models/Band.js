@@ -6,7 +6,7 @@ const bandSchema = new Schema({
         required: true
     },
     artists: {
-        type: [String],
+        type: String,
         required: true
     },
     stage: {
@@ -21,8 +21,11 @@ const bandSchema = new Schema({
         type: String,
         
     },
+    uploaded_file: {
+        type: String
+    },
     setlist: {
-        type: [String],
+        type: String,
         
     },
 
