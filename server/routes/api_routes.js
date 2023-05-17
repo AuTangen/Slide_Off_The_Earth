@@ -168,7 +168,11 @@ router.delete('/stage/:id', isAuthenticated, async (req, res) => {
 
 // ********VENDOR ROUTES********
 
-
+// Get all vendors
+router.get('/vendors', async (req, res) => {
+    const vendor = await Vendor.find()
+    res.send(vendor)
+})
 
 // Create a vendor
 router.post('/vendor', isAuthenticated, async (req, res) => {

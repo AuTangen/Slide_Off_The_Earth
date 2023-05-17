@@ -56,6 +56,7 @@ function Artists(props) {
     }
     return (
         <>
+
             <section className="artist-container">
 
             <h2 className="section-title">ARTISTS</h2>
@@ -63,11 +64,18 @@ function Artists(props) {
                 {artists.map(outputArtists)}
             </section>
 
-            {props.user && (<button className="submit-btn" id='add-band'>Add Band</button>)}
-            {/* <div class='artist-container'>
-                <div>Band 1</div>
-            </div> */}
+            {props.user && (
+                <NavLink to='/addartist'>
+                    <button 
+                        id='add-band'>
+                        Add Artist
+                    </button>
+                </NavLink>
+                )
+            }
+
             </section>
+
         </>
     )
 
