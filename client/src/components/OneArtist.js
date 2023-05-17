@@ -1,4 +1,4 @@
-import { NavLink, useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate, useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
@@ -6,13 +6,15 @@ import axios from 'axios';
 function OneArtist(props) {
     
     // const navigate = useNavigate();
+    const {id} = useParams();
     
-    const [artist, setArtist] = useState();
+    const [artist, setArtist] = useState({});
 
     useEffect(() => {
-        axios.get('/api/artists/6464e318bef6b83245f0a9cd')
+        
+        axios.get(`/api/artists/${id}`)
             .then(res => {
-                console.log(res.data)
+                console.log('res', res.data)
                 setArtist(res.data);
             });
     }, []);
@@ -52,7 +54,7 @@ function OneArtist(props) {
 
             <section className='artist-container'>
                 {/* {OutputArtist} */}
-                <OutputArtist  artist={artist} />
+                <OutputArtist hello="paul" artist={artist} />
             </section>
 
 

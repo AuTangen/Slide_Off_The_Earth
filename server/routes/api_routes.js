@@ -124,8 +124,9 @@ router.delete('/artist/:id', isAuthenticated, async (req, res) => {
 
 
     await Band.findByIdAndDelete(new ObjectId(req.params.id))
+    const bands = await Band.find()
 
-    res.send({ message: 'Band successfully deleted!' })
+    res.send({ artists: bands })
 })
 
 
