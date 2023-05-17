@@ -34,7 +34,6 @@ function Artists(props) {
 
     const outputArtists = (artists) => {
         return (
-            <div className="artist-section">
             <div key={artists._id} className="artists">
 
                 <NavLink to='/artist/${artists._id}'><img src={bando} alt="the band" className="w-full" /></NavLink>
@@ -55,7 +54,6 @@ function Artists(props) {
             )} */}
             </div>
             </div>
-            </div>
         );
     }
     return (
@@ -64,23 +62,21 @@ function Artists(props) {
             <section className="artist-container">
 
             <h2 className="section-title">ARTISTS</h2>
-            <section className='artist-section'>
+            {props.user && (
+                <NavLink to="/addartist">
+                    <button 
+                        className="add-artist-btn" 
+                        id='add-band'>
+                            Add Artist
+                    </button>
+                </NavLink>)}
+                <div className="artist-section">
                 {artists.map(outputArtists)}
-            </section>
+                </div>
 
-            {props.user && (<NavLink to="/addartist"><button className="submit-btn" id='add-band'>Add Artist</button></NavLink>)}
             {/* <div class='artist-container'>
                 <div>Band 1</div>
             </div> */}
-            {props.user && (
-                <NavLink to='/addartist'>
-                    <button 
-                        id='add-band'>
-                        Add Artist
-                    </button>
-                </NavLink>
-                )
-            }
 
             </section>
 

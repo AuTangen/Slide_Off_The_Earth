@@ -102,7 +102,7 @@ li a:hover {
 }
 
 .artist-section {
-  @apply container flex flex-col justify-center items-center w-full h-full gap-4 mx-auto py-8;
+  @apply container flex flex-col justify-center items-center w-full h-full gap-4 mx-auto pb-8;
 }
 
 .artists {
@@ -117,12 +117,40 @@ li a:hover {
   @apply text-xl mb-2 font-bold;
 }
 
+.add-artist-btn {
+  @apply block w-40 mx-auto mb-4 rounded-md bg-primary mt-2 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-[#05BFDB] hover:text-black ;
+}
+
 /* Add Artist */
+
 .add-artist {
   @apply text-4xl text-center;
 }
 .add-artist-container {
   @apply container flex flex-col w-full h-full px-6 my-auto text-white;
+}
+
+/* News */
+.news-wrap {
+  @apply mt-4 p-4 bg-gray-800;
+}
+
+/* FAQ */
+.faq-wrap {
+  @apply mt-4 mb-20 p-4 bg-gray-800 rounded;
+}
+
+.faq-wrap h2 {
+  @apply text-2xl text-[#088395] font-bold;
+  font-style: italic;
+}
+
+.faq-wrap p {
+  @apply text-lg text-right pb-4;
+}
+
+.faq-wrap ul li {
+  @apply text-lg text-right;
 }
 
 /* Footer */
@@ -169,16 +197,37 @@ footer {
     @apply text-6xl text-center justify-center align-middle text-white font-bold bg-secondary rounded py-6 px-2 w-96 mx-auto;
   }
 
-  .artist-section {
-    @apply container grid w-full h-full lg:grid-cols-2 gap-4 mx-auto py-8;
+  .artist-container {
+    @apply container w-full h-full flex flex-col align-middle items-center justify-center mx-auto px-10 pt-20 pb-40;
   }
 
-  .artist-container {
-    @apply container flex flex-col items-center justify-center mx-auto px-10 py-40;
+  .add-artist-btn {
+    @apply block w-full rounded-md bg-primary mt-2 px-3 pt-2 text-sm font-semibold text-white shadow-sm hover:bg-[#05BFDB] hover:text-black ;
+  }
+  
+  .artist-section {
+    @apply grid xl:grid-cols-2 justify-center gap-1;
+  }
+
+  .artist-card {
+    @apply flex-1 w-full h-full;
   }
 
   .add-artist-container {
     @apply container flex flex-col w-full h-full mx-auto px-10 mt-20 text-white;
+  }
+
+  .faq-wrap h2 {
+    @apply text-4xl text-[#088395] font-bold;
+    font-style: italic;
+  }
+  
+  .faq-wrap p {
+    @apply text-xl text-right pb-4;
+  }
+  
+  .faq-wrap ul li {
+    @apply text-xl text-right;
   }
 
   .footer {
