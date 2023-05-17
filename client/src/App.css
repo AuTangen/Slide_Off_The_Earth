@@ -49,8 +49,20 @@ li {
   @apply mb-5;
 }
 
+form {
+  @apply flex flex-col mb-auto mt-4 justify-center align-middle;
+}
+
+.form-container {
+  @apply: grid grid-cols-1 gap-x-4 gap-y-2 sm:grid-cols-4;
+}
+
 .form-element {
   @apply block w-full rounded-md border-0 py-1.5 px-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-[#088395] sm:text-sm sm:leading-6;
+}
+
+.submit-btn {
+  @apply block w-full rounded-md bg-secondary px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-[#088395] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0A4D68];
 }
 
 /* Nav */
@@ -75,16 +87,21 @@ li a:hover {
   width: 11rem;
 }
 
-/* About */
+/* Artists */
+.band-section {
+  @apply container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mx-auto;
+}
 
-/* .about-wrap {
-  @apply grid grid-cols-1 items-center justify-center;
-} */
+.artists {
+  @apply max-w-sm rounded overflow-hidden shadow-lg;
+}
 
-.about-img img {
-  width: 40%;
-  background: #fff;
-  border-radius: 50%;
+.artist-info {
+  @apply px-6 pt-4 pb-2;
+}
+
+.artist-info h4 {
+  @apply text-xl mb-2 font-bold;
 }
 
 /* Add Artist */
@@ -104,10 +121,6 @@ li a:hover {
   @apply flex justify-between items-center px-5 bg-secondary text-white py-2;
 }
 
-/* .copyright {
-  @apply text-sm;
-} */
-
 .footer-nav {
   @apply justify-end items-center;
 }
@@ -118,18 +131,6 @@ li a:hover {
 
 .socials:hover {
   @apply text-yellow-500;
-}
-
-form {
-  margin-top: 10%;
-  max-width: 350px;
-  display: flex;
-  flex-direction: column;
-}
-
-form input {
-  
-  margin-bottom: 10px;
 }
 
 /* Media Queries */
