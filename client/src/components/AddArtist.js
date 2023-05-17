@@ -60,13 +60,13 @@ function AddArtist(props) {
       
             <h2>Add Artist</h2>
 
-                <form onSubmit={createBand} className="flex flex-col mb-auto mt-4 justify-center align-middle">
-                <div class="grid grid-cols-1 gap-x-4 gap-y-2 sm:grid-cols-4">
+                <form onSubmit={createBand}>
+                <div class="form-container">
                     <div className="col-span-full">
                     <label for="name">Artist Name</label>
                     <div className='mt-2'>
                     <input name='name' value={formState.name} onChange={handleChange} className="form-element" type='text' placeholder='Artist Name'></input>
-                        </div>
+                        </div>            
                     </div>
                     
                     <div className="col-span-full">
@@ -106,7 +106,7 @@ function AddArtist(props) {
                     </div>
 
                     <div className="col-span-full">
-                    <button className="block w-full rounded-md bg-secondary px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-[#088395] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0A4D68]" type='submit'>Submit</button>
+                    <button className="submit-btn" type='submit'>Submit</button>
                     </div>
                     </div>
                 </form>
