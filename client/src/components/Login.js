@@ -38,7 +38,7 @@ function Login(props) {
     return (
         <>
             <div class='add-artist-container'>
-                <h2 className="section-title pb-10">Login</h2>
+                <div className="section-title"><h2>Login</h2></div>
                 <form onSubmit={submitLogin}>
                     <div className="form-container">
                         <div className="col-span-full mt-2">
