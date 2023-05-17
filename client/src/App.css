@@ -178,7 +178,7 @@ footer {
   }
 
   .add-artist-container {
-    @apply container flex flex-col w-full h-full px-6 mt-20 text-white;
+    @apply container flex flex-col w-full h-full mx-auto px-10 mt-20 text-white;
   }
 
   .footer {
