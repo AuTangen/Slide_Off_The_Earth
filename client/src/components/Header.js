@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { FaBars, FaTimes } from "react-icons/fa";
 import SOTE from '../assets/sote.png';
+import axios from "axios";
 
 function Header(props) {
     const [nav, setNav] = useState(false);
@@ -9,6 +10,16 @@ function Header(props) {
     const handleClick = () => setNav(!nav);
 
     const { toggleView } = props
+
+    const navigate = useNavigate()
+
+    const logout = async (event) => {
+      event.preventDefault();
+
+      await axios.get('/auth/logout')
+      props.setUser(null)
+      navigate('/')
+  }
 
     return (
         <header className="header">
@@ -68,7 +79,7 @@ function Header(props) {
 
                <li>
                {props.user ? (
-                  <NavLink to='/logout'>Logout</NavLink>
+                  <NavLink onClick={logout} to="/auth/logout" >Logout</NavLink>
                 ) : (
                   <NavLink to='/login'>Login</NavLink>
                 )}
