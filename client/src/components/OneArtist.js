@@ -7,12 +7,13 @@ function OneArtist(props) {
     
     // const navigate = useNavigate();
     
-    const [artist, setArtist] = useState();
+    const [artist, setArtist] = useState({});
 
     useEffect(() => {
-        axios.get('/api/artists/6464e318bef6b83245f0a9cd')
+        
+        axios.get('/api/artists/6464f7d42c58cb91a62d7f94')
             .then(res => {
-                console.log(res.data)
+                console.log('res', res.data)
                 setArtist(res.data);
             });
     }, []);

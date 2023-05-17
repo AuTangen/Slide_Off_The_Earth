@@ -19,6 +19,8 @@ function Artists(props) {
         try{
             const res = await axios.delete(`/api/artist/${artistID}`)
             console.log('deleted')
+            console.log(res.data)
+            setArtists(res.data.artists);
         } catch (err) {
             if (err.code === 402) {
                 console.log(err)
