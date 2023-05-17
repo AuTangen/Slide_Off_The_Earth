@@ -1,6 +1,7 @@
 import { NavLink, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import bando from '../assets/bando.jpg';
 
 function Artists(props) {
     // const navigate = useNavigate();
@@ -17,6 +18,8 @@ function Artists(props) {
     const outputArtists = (artists) => {
         return (
             <div key={artists._id} className="artists">
+                <img src={bando} alt="the band" className="w-full" />
+                <div className="artist-info">
                 <h4>{artists.name}</h4>
                 <p>Members: {artists.artists}</p>
                 <p>Stage: {artists.stage}</p>
@@ -28,6 +31,7 @@ function Artists(props) {
                 <button onClick={() => saveFavorite(drink._id)}>Favorite This Drink</button>
             )} */}
             </div>
+            </div>
         );
     }
     return (
@@ -36,13 +40,13 @@ function Artists(props) {
 
 
 
+            {/* <h2>ARTISTS</h2>
             <h2>ARTISTS</h2>
             <h2>ARTISTS</h2>
             <h2>ARTISTS</h2>
             <h2>ARTISTS</h2>
             <h2>ARTISTS</h2>
-            <h2>ARTISTS</h2>
-            <h2>ARTISTS</h2>
+            <h2>ARTISTS</h2> */}
 
 
 
@@ -52,9 +56,9 @@ function Artists(props) {
             </section>
 
             {props.user && (<button id='add-band'>Add Band</button>)}
-            <div class='artist-container'>
+            {/* <div class='artist-container'>
                 <div>Band 1</div>
-            </div>
+            </div> */}
 
         </>
     )
