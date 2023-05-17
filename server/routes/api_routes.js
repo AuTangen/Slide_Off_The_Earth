@@ -121,12 +121,11 @@ router.post('/artist', isAuthenticated, async (req, res) => {
 // Delete a band
 router.delete('/artist/:id', isAuthenticated, async (req, res) => {
     
+    const artist_id = req.params.id
 
+    await Band.findByIdAndDelete(new ObjectId(artist_id))
 
-    await Band.findByIdAndDelete(new ObjectId(req.params.id))
-    const bands = await Band.find()
-
-    res.send({ artists: bands })
+    res.send({ message: 'Artist was successfully deleted.'  })
 })
 
 
@@ -190,20 +189,29 @@ router.post('/vendor', isAuthenticated, async (req, res) => {
 
 // Delete a vendor
 router.delete('/vendor/:id', isAuthenticated, async (req, res) => {
+    
     const vendor_id = req.params.id
 
-    // Get the vendor by id
-    const vendor = await Vendor.findById(vendor_id)
+    await Vendor.findByIdAndDelete(new ObjectId(vendor_id))
 
-    if (!vendor) return res.status(500).send({ error: 'That vendor doesn\'t exist' })
-
-    if (vendor.user !== req.session.user_id)
-        return res.status(401).send({ error: 'You are not allowed to delete a vendor added by another user.' })
-
-        await Vendor.findByIdAndDelete(vendor_id)
-
-        res.send({ message: 'Vendor successfully deleted!' })
+    res.send({ message: 'Vendor was successfully deleted.'  })
 })
+
+// router.delete('/vendor/:id', isAuthenticated, async (req, res) => {
+//     const vendor_id = req.params.id
+
+//     // Get the vendor by id
+//     const vendor = await Vendor.findById(vendor_id)
+
+//     if (!vendor) return res.status(500).send({ error: 'That vendor doesn\'t exist' })
+
+//     if (vendor.user !== req.session.user_id)
+//         return res.status(401).send({ error: 'You are not allowed to delete a vendor added by another user.' })
+
+//         await Vendor.findByIdAndDelete(vendor_id)
+
+//         res.send({ message: 'Vendor successfully deleted!' })
+// })
 
 
 module.exports = router
