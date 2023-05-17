@@ -55,32 +55,21 @@ function Artists(props) {
     return (
         <>
             
+            <h2>ARTISTS</h2>
 
-
-            {/* <h2>ARTISTS</h2>
-            <h2>ARTISTS</h2>
-            <h2>ARTISTS</h2>
-            <h2>ARTISTS</h2>
-            <h2>ARTISTS</h2>
-            <h2>ARTISTS</h2>
-            <h2>ARTISTS</h2> */}
-
-
-
-            <h2>ARTISTS</h2>
             <section className='artist-container'>
                 {artists.map(outputArtists)}
             </section>
 
-
-       
-
-
-
-            {props.user && (<button id='add-band'>Add Band</button>)}
-            {/* <div class='artist-container'>
-                <div>Band 1</div>
-            </div> */}
+            {props.user && (
+                <NavLink to='/addartist'>
+                    <button 
+                        id='add-band'>
+                        Add Artist
+                    </button>
+                </NavLink>
+                )
+            }
 
         </>
     )

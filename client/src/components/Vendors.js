@@ -19,22 +19,13 @@ function Vendors(props) {
             <div key={vendors._id} className="vendors">
                 <h4>{vendors.name}</h4>
                 <p>Category: {vendors.category}</p>
+                <p>Lot Size: {vendors.lotSize}</p>
             </div>
         );
     }
 
     return (
         <>
-            
-            <h2>VENDORS</h2>
-            <h2>VENDORS</h2>
-            <h2>VENDORS</h2>
-            <h2>VENDORS</h2>
-            <h2>VENDORS</h2>
-            <h2>VENDORS</h2>
-            <h2>VENDORS</h2>
-
-
 
             <h2>VENDORS</h2>
 
