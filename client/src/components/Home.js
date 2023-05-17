@@ -1,11 +1,19 @@
 import { NavLink, useNavigate } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 import bando from '../assets/bando.jpg';
 
 function Home() {
     // const navigate = useNavigate();
-    const artists = useState([]);
+    const [artists, setArtists] = useState([]);
+
+    useEffect(() => {
+        axios.get('/api/artists')
+            .then(res => {
+                setArtists(res.data);
+            });
+    }, []);
+
 
 
     const outputArtists = (artists) => {
