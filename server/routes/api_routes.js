@@ -128,6 +128,22 @@ router.delete('/artist/:id', isAuthenticated, async (req, res) => {
     res.send({ message: 'Artist was successfully deleted.'  })
 })
 
+// update a band
+router.put('/artist/:id', isAuthenticated, async (req, res) => {
+    const user_id = req.session.user_id
+    try {
+        const band = await Band.findByIdAndUpdate(new ObjectId(req.params.id),{
+            ...req.body,
+            user: user_id
+        },{new: true})
+        
+        res.send({artists: band })
+        console.log({artists: band })
+    } catch (err) {
+        res.status(500).send({ error: err })
+    }
+})
+
 
 
 // ********STAGE ROUTES********
