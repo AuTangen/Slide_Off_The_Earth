@@ -7,9 +7,9 @@ function Footer(props) {
     // const navigate = useNavigate();
 
     return (
-    <footer className="footer-wrap">
+    <footer>
             
-        <div className="footer">
+        <div className="footer-wrap">
             <p className="copyright">&copy; 2023 SlideOffTheEarth</p>
 
             <div className="footer-nav">

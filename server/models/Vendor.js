@@ -9,6 +9,10 @@ const vendorSchema = new Schema({
     category: {
         type: String,
         required: true
+    },
+    lotSize: {
+        type: String,
+        required: true
     }
 
 })

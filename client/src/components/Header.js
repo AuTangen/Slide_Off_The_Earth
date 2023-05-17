@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
-import { FaBars, FaTimes, FaLinkedin, FaGithub } from "react-icons/fa";
+import { FaBars, FaTimes } from "react-icons/fa";
 import SOTE from '../assets/sote.png';
 
 function Header(props) {

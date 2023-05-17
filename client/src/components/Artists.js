@@ -17,11 +17,12 @@ function Artists(props) {
 
     const outputArtists = (artists) => {
         return (
+            <div className="artist-section">
             <div key={artists._id} className="artists">
                 <img src={bando} alt="the band" className="w-full" />
                 <div className="artist-info">
                 <h4>{artists.name}</h4>
-                <p>Members: {artists.artists}</p>
+                {/* <p>Members: {artists.artists}</p> */}
                 <p>Stage: {artists.stage}</p>
                 <p>Day: {artists.day}</p>
                 <p>Time: {artists.time}</p>
@@ -32,34 +33,23 @@ function Artists(props) {
             )} */}
             </div>
             </div>
+            </div>
         );
     }
     return (
         <>
+            <section className="artist-container">
 
-
-
-
-            {/* <h2>ARTISTS</h2>
-            <h2>ARTISTS</h2>
-            <h2>ARTISTS</h2>
-            <h2>ARTISTS</h2>
-            <h2>ARTISTS</h2>
-            <h2>ARTISTS</h2>
-            <h2>ARTISTS</h2> */}
-
-
-
-            <h2>ARTISTS</h2>
-            <section className='band-section'>
+            <h2 className="section-title">ARTISTS</h2>
+            <section className='artist-section'>
                 {artists.map(outputArtists)}
             </section>
 
-            {props.user && (<button id='add-band'>Add Band</button>)}
+            {props.user && (<button className="submit-btn" id='add-band'>Add Band</button>)}
             {/* <div class='artist-container'>
                 <div>Band 1</div>
             </div> */}
-
+            </section>
         </>
     )
 
