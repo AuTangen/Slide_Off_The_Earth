@@ -21,7 +21,9 @@ function Artists(props) {
             const res = await axios.delete(`/api/artist/${artistID}`)
             console.log('deleted')
             console.log(res.data)
-            setArtists(res.data.artists);
+
+            setArtists(res.data.artists)
+
         } catch (err) {
             if (err.code === 402) {
                 console.log(err)
@@ -35,12 +37,12 @@ function Artists(props) {
             <div className="artist-section">
             <div key={artists._id} className="artists">
 
-                <NavLink to={`/artist/${artists._id}`}>View Band</NavLink>
+                <NavLink to='/artist/${artists._id}'><img src={bando} alt="the band" className="w-full" /></NavLink>
 
-                <img src={bando} alt="the band" className="w-full" />
+                
                 <div className="artist-info">
 
-                <h4>{artists.name}</h4>
+                <NavLink to='/artist/${artists._id}'><h4>{artists.name}</h4></NavLink>
                 {/* <p>Members: {artists.artists}</p> */}
                 <p>Stage: {artists.stage}</p>
                 <p>Day: {artists.day}</p>
@@ -66,6 +68,10 @@ function Artists(props) {
                 {artists.map(outputArtists)}
             </section>
 
+            {props.user && (<NavLink to="/addartist"><button className="submit-btn" id='add-band'>Add Artist</button></NavLink>)}
+            {/* <div class='artist-container'>
+                <div>Band 1</div>
+            </div> */}
             {props.user && (
                 <NavLink to='/addartist'>
                     <button 

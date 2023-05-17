@@ -166,7 +166,7 @@ footer {
   }
 
   .section-title {
-    @apply text-6xl text-center text-white font-bold bg-secondary rounded py-2 px-2 w-96 mx-auto;
+    @apply text-6xl text-center justify-center align-middle text-white font-bold bg-secondary rounded py-6 px-2 w-96 mx-auto;
   }
 
   .artist-section {
@@ -178,7 +178,7 @@ footer {
   }
 
   .add-artist-container {
-    @apply container flex flex-col w-full h-full px-6 mt-20 text-white;
+    @apply container flex flex-col w-full h-full mx-auto px-10 mt-20 text-white;
   }
 
   .footer {
