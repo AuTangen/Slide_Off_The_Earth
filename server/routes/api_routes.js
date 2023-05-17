@@ -5,6 +5,7 @@ const Band = require('../models/Band')
 const Stage = require('../models/Stage')
 const User = require('../models/User')
 const Vendor = require('../models/Vendor')
+const ObjectId = require('mongoose').Types.ObjectId;
 
 
 function isAuthenticated(req, res, next) {
@@ -13,6 +14,16 @@ function isAuthenticated(req, res, next) {
 
     next();
 }
+
+// function isAdmin (req, res, next) {
+//     const user_id = req.session.user_id;
+//     const user = await User.findOne({
+//         _id: user_id
+//       })
+//     if (!user.isAdmin) return res.status(401).send({ error: "You must be an admin to add bands!" })
+
+//     next();
+// }
 
 
 // ********BAND ROUTES********
@@ -26,12 +37,15 @@ router.get('/artists', async (req, res) => {
 
 // Get one band by id
 router.get('/artists/:id', async (req, res) => {
-    const bands = await Band.findById(req.params.id).populate({
-        path: 'user',
-        select: '-password'
-    })
-})
-
+    // const band = await Band.findOne({name: req.params.name })
+    const band = await Band.findById(new ObjectId(req.params.id))
+    // .populate({
+    //     path: 'user',
+    //     select: '-password'
+    // })
+    console.log(band)
+    res.send(band)
+});
 
 // Get favorite bands for user
 router.get('/artists/user', isAuthenticated, async (req, res) => {
@@ -106,17 +120,10 @@ router.post('/artist', isAuthenticated, async (req, res) => {
 
 // Delete a band
 router.delete('/artist/:id', isAuthenticated, async (req, res) => {
-    const band_id = req.params.id
+    
 
-    // Get the band by id
-    const band = await Band.findById(band_id)
 
-    if (!band) return res.status(500).send({ error: 'That band doesn\'t exist' })
-
-    if (band.user !== req.session.user_id)
-        return res.status(401).send({ error: 'You are not allowed to delete another user\'s band.' })
-
-    await Band.findByIdAndDelete(band_id)
+    await Band.findByIdAndDelete(new ObjectId(req.params.id))
 
     res.send({ message: 'Band successfully deleted!' })
 })
