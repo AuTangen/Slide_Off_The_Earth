@@ -39,6 +39,7 @@ function Login(props) {
         <>
             <div class='add-artist-container'>
                 <div className="section-title"><h2>Login</h2></div>
+                <NavLink to='/register'><p className="text-center hover:text-gray-300">No account? Click hear to register</p></NavLink>
                 <form onSubmit={submitLogin}>
                     <div className="form-container">
                         <div className="col-span-full mt-2">
