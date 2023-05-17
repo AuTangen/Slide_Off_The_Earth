@@ -74,7 +74,7 @@ function Header(props) {
                 className={({ isActive, isPending }) =>
                   isPending ? 'pending' : isActive ? 'active' : ''
                 }
-                >Faq</NavLink>
+                >FAQ</NavLink>
                </li>
 
                <li>
@@ -116,7 +116,11 @@ function Header(props) {
           <NavLink to='./faq'>FAQ</NavLink>
           </li>
           <li className='py-6 text-4xl'>
-          <NavLink to='./login'>Login</NavLink>
+            {props.user ? (
+              <NavLink onClick={logout} to="/auth/logout" >Logout</NavLink>
+            ) : (
+              <NavLink to='/login'>Login</NavLink>
+            )}
           </li>
         </ul>
 
