@@ -38,15 +38,35 @@ function Register(props) {
 
 
     return (
+        <div class='add-artist-container'>
+                <div className="section-title"><h2>Register</h2></div>
 
         <form onSubmit={submitRegister}>
-
-            <h1>Register</h1>
-            <input name='username' value={formState.username} onChange={handleChange} type="text" placeholder="Create your username"></input>
-            <input name='email' value={formState.email} onChange={handleChange} type="email" placeholder="Enter your email"></input>
-            <input name='password' value={formState.password} onChange={handleChange} type="password" placeholder="Enter your password"></input>
-            <button>Register Account</button>
+        <div className="form-container">
+            <div className="col-span-full mt-2">
+                <label for="username">Username</label>
+                <div className="mt-2">
+            <input name='username' className="form-element" value={formState.username} onChange={handleChange} type="text" placeholder="Create your username"></input>
+            </div>
+            </div>
+            <div className="col-span-full mt-2">
+                <label for="email">Email</label>
+                <div className="mt-2">
+            <input name='email' className="form-element" value={formState.email} onChange={handleChange} type="email" placeholder="Enter your email"></input>
+            </div>
+            </div>
+            <div className="col-span-full mt-2">
+                <label for="password">Password</label>
+                <div className="mt-2">
+            <input name='password' className="form-element" value={formState.password} onChange={handleChange} type="password" placeholder="Enter your password"></input>
+            </div>
+            </div>
+            <div className="col-span-full mt-2">
+            <button className="submit-btn">Register Account</button>
+            </div>
+            </div>
         </form>
+        </div>
 
     )
 
