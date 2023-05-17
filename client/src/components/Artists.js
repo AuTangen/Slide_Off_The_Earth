@@ -35,7 +35,7 @@ function Artists(props) {
             <div className="artist-section">
             <div key={artists._id} className="artists">
 
-                <NavLink to='/artist'>View Band</NavLink>
+                <NavLink to={`/artist/${artists._id}`}>View Band</NavLink>
 
                 <img src={bando} alt="the band" className="w-full" />
                 <div className="artist-info">
