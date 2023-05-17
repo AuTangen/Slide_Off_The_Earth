@@ -1,4 +1,4 @@
-import { NavLink, useNavigate } from 'react-router-dom';
+import { NavLink, Routes, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import bando from '../assets/bando.jpg';
@@ -15,18 +15,36 @@ function Artists(props) {
             });
     }, []);
 
+    const deleteArtist = async (artistID) => {
+       
+        try{
+            const res = await axios.delete(`/api/artist/${artistID}`)
+            console.log('deleted')
+        } catch (err) {
+            if (err.code === 402) {
+                console.log(err)
+            }
+        }
+        
+    }
+
     const outputArtists = (artists) => {
         return (
             <div className="artist-section">
             <div key={artists._id} className="artists">
+
+                <NavLink to='/artist'>View Band</NavLink>
+
                 <img src={bando} alt="the band" className="w-full" />
                 <div className="artist-info">
+
                 <h4>{artists.name}</h4>
                 {/* <p>Members: {artists.artists}</p> */}
                 <p>Stage: {artists.stage}</p>
                 <p>Day: {artists.day}</p>
                 <p>Time: {artists.time}</p>
                 <p>Set List: {artists.setlist}</p>
+                <button onClick={() => deleteArtist(artists._id)}>Delete</button>
                 {/* {props.user && (
               drink.favorited ? <button disabled>Favorited</button> :
                 <button onClick={() => saveFavorite(drink._id)}>Favorite This Drink</button>

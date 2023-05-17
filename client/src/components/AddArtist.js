@@ -77,9 +77,10 @@ function AddArtist(props) {
                     <label for="stage">Select a Stage:</label> 
                     <div className='mt-1'>
                         <select  name='stage' value={formState.stage} onChange={handleChange} className="form-element" id="stages"> 
-                            <option value="stageA">Main Stage</option> 
-                            <option value="stageB">Almost Famous Stage</option> 
-                            <option value="stageC">Noob Stage</option> 
+                            <option value="">Select a Stage</option> 
+                            <option value="Main Stage">Main Stage</option> 
+                            <option value="Almost Famous Stage">Almost Famous Stage</option> 
+                            <option value="Noob Stage">Noob Stage</option> 
                         </select>
                         </div>
                         </div>
