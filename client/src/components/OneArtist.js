@@ -1,24 +1,60 @@
 import { NavLink, useNavigate } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+
 
 function OneArtist(props) {
+    
     // const navigate = useNavigate();
+    
+    const [artist, setArtist] = useState();
+
+    useEffect(() => {
+        axios.get('/api/artists/6464e318bef6b83245f0a9cd')
+            .then(res => {
+                console.log(res.data)
+                setArtist(res.data);
+            });
+    }, []);
+
+    const OutputArtist = (artist) => {
+        console.log('artist', artist)
+        console.log(artist.artist.name)
+        return (
+            <div key={artist.artist._id} className="artists">
+                
+                <h4>{artist.artist.name}</h4>
+                <p>Members: {artist.artist.artists}</p>
+                <p>Stage: {artist.artist.stage}</p>
+                <p>Day: {artist.artist.day}</p>
+                <p>Time: {artist.artist.time}</p>
+                <p>Set List: {artist.artist.setlist}</p>
+                {/* {props.user && (
+              drink.favorited ? <button disabled>Favorited</button> :
+                <button onClick={() => saveFavorite(drink._id)}>Favorite This Drink</button>
+            )} */}
+            </div>
+        );
+    }
+
+    
 
     return (
         <>
 
-            <div class='one-artist-container'>
-                <h3>Artist Name</h3>
-                <p>Band Members</p>
-                <p>Stage</p>
-                <p>Date</p>
-                <p>Time</p>
-                <p>Set List</p>
-            </div>
+
 
             <div class='edit-delete-artist-container'>
                 <button id='edit-artist'>Edit</button>
                 <button id='delete-artist'>Delete</button>
             </div>
+
+
+            <section className='artist-container'>
+                {/* {OutputArtist} */}
+                <OutputArtist  artist={artist} />
+            </section>
+
 
         </>
     )
