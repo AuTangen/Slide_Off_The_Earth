@@ -38,13 +38,10 @@ router.get('/artists', async (req, res) => {
 // Get one band by id
 router.get('/artists/:id', async (req, res) => {
     // const band = await Band.findOne({name: req.params.name })
-    const band = await Band.findById(new ObjectId(req.params.id))
-    // .populate({
-    //     path: 'user',
-    //     select: '-password'
-    // })
-    console.log(band)
-    res.send(band)
+    const artist = await Band.findById(new ObjectId(req.params.id))
+ 
+    console.log(artist)
+    res.send(artist)
 });
 
 // Get favorite bands for user
@@ -125,7 +122,8 @@ router.delete('/artist/:id', isAuthenticated, async (req, res) => {
 
     await Band.findByIdAndDelete(new ObjectId(artist_id))
 
-    res.send({ message: 'Artist was successfully deleted.'  })
+    // res.redirect('/artists');
+    console.log({artists: artist_id })
 })
 
 // update a band

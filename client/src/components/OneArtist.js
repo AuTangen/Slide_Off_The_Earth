@@ -1,4 +1,4 @@
-import { NavLink, useNavigate, useParams } from 'react-router-dom';
+import { NavLink, useNavigate, useParams, } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import bando from '../assets/bando.jpg';
@@ -32,7 +32,7 @@ function OneArtist(props) {
             const res = await axios.delete(`/api/artist/${artistID}`)
             console.log('deleted')
             console.log(res.data)
-            setArtist(res.data.artists);
+            setArtist(res.data);
         } catch (err) {
             if (err.code === 402) {
                 console.log(err)
@@ -42,25 +42,25 @@ function OneArtist(props) {
     }
 
 
-    const OutputArtist = (artist) => {
+    const OutputArtist = ({artist}) => {
         console.log('artist', artist)
-        console.log(artist.artist.name)
+
         return (
             <div className="artist-section">
-            <div key={artist.artist._id} className="artists">
+            <div key={artist._id} className="artists">
 
                 
 
                 <img src={bando} alt="the band" className="w-full" />
                 <div className="artist-info">
 
-                <h4>{artist.artist.name}</h4>
+                <h4>{artist.name}</h4>
                 {/* <p>Members: {artists.artists}</p> */}
-                <p>Stage: {artist.artist.stage}</p>
-                <p>Day: {artist.artist.day}</p>
-                <p>Time: {artist.artist.time}</p>
-                <p>Set List: {artist.artist.setlist}</p>
-                <button onClick={() => deleteArtist(artist.artist._id)}>Delete</button>
+                <p>Stage: {artist.stage}</p>
+                <p>Day: {artist.day}</p>
+                <p>Time: {artist.time}</p>
+                <p>Set List: {artist.setlist}</p>
+                <button onClick={() => deleteArtist(artist._id)}>Delete</button>
                 <button onClick={updateForm}>Update</button>
 
                 {/* {props.user && (
@@ -113,8 +113,6 @@ function OneArtist(props) {
             }
         }
     }
-
-    
 
     return (
         <>
