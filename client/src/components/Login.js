@@ -36,17 +36,32 @@ function Login(props) {
 
 
     return (
-
-        <form onSubmit={submitLogin}>
-
-            <h1>Login</h1>
-            <input name='email' value={formState.email} onChange={handleChange} type="email" placeholder="Enter your email"></input>
-            <input name='password' value={formState.password} onChange={handleChange} type="password" placeholder="Enter your password"></input>
-            <button>Login</button>
-        </form>
-
+        <>
+            <div class='add-artist-container'>
+                <h2 className="section-title pb-10">Login</h2>
+                <form onSubmit={submitLogin}>
+                    <div className="form-container">
+                        <div className="col-span-full mt-2">
+                            <label for="email">Email</label>
+                            <div className="mt-1">
+                                <input name="email" className="form-element" value={formState.email} onChange={handleChange} type="email" placeholder="Enter your email"></input>
+                            </div>
+                        </div>
+                        <div className="col-span-full mt-2">
+                            <label for="password">Password</label>
+                            <div className="mt-1">
+                            <input name="password" className="form-element" value={formState.password} onChange={handleChange} type="password" placeholder="Enter your password"></input>
+                        </div>
+                    </div>
+                    <div className="col-span-full mt-4">
+                        <button className="submit-btn" type="submit">Login</button>
+                    </div>
+                    </div>
+                </form>
+            </div >
+        </>
     )
 };
-     
+
 
 export default Login;
