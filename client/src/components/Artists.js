@@ -15,21 +15,7 @@ function Artists(props) {
             });
     }, []);
 
-    const deleteArtist = async (artistID) => {
-       
-        try{
-            const res = await axios.delete(`/api/artist/${artistID}`)
-            console.log('deleted')
-            console.log(res.data)
-            setArtists(res.data.artists);
-        } catch (err) {
-            if (err.code === 402) {
-                console.log(err)
-            }
-        }
-        
-    }
-
+    
     const outputArtists = (artists) => {
         return (
             <div className="artist-section">
@@ -46,7 +32,7 @@ function Artists(props) {
                 <p>Day: {artists.day}</p>
                 <p>Time: {artists.time}</p>
                 <p>Set List: {artists.setlist}</p>
-                <button onClick={() => deleteArtist(artists._id)}>Delete</button>
+                
                 {/* {props.user && (
               drink.favorited ? <button disabled>Favorited</button> :
                 <button onClick={() => saveFavorite(drink._id)}>Favorite This Drink</button>
