@@ -32,6 +32,7 @@ function App(props) {
 
   return (
     <>
+      <div className="app-container">
       <Header user={user} setUser={setUser}/>
         <main>
         <Routes>
@@ -50,6 +51,7 @@ function App(props) {
         </Routes>
         </main>
       <Footer />
+      </div>
     </>
   )
 

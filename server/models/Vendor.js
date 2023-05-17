@@ -10,7 +10,7 @@ const vendorSchema = new Schema({
         type: String,
         required: true
     },
-
+  
     lotSize: {
         type: String,
         required: true

@@ -43,24 +43,28 @@ function AddVendor(props) {
         <>
             <div class='add-artist-container'>
 
-            <h2 className="text-4xl text-center">Add Vendor</h2>
+            <h2 className="section-title">Add Vendor</h2>
 
                 <form onSubmit={createVendor}>
                     <div className="form-container">
                         <div className="col-span-full">
                             <label for="name">Vendor Name:</label>
                             <div className="mt-2">
+
                                 <input name='name' value={formState.name} onChange={handleChange} className='form-element' type='text' placeholder='Vendor Name'></input>
+
                             </div>
                         </div>
                         
                         <div className="col-span-full">
                             {/* <label for="category">Select a Category:</label> */}
                             <div className="mt-2"> 
+
                                 <select name="category" className='form-element' value={formState.category} onChange={handleChange} id="category"> 
                                 <option value=''>Select a Category</option>
                                 <option value="Food">Food</option> 
                                 <option value="Merchandise">Merchandise</option> 
+
                                 </select>
                             </div>
                         </div>
@@ -68,15 +72,18 @@ function AddVendor(props) {
                         <div className="col-span-full">
                             {/* <label for="lotSize">Select Lot Size:</label> */}
                             <div className="mt-2">
+
                                 <select name="lotSize" className='form-element' value={formState.lotSize} onChange={handleChange} id="lotSize">
                                     <option value=''>Select a Lot Size</option>
                                     <option value="Table">Table</option>
                                     <option value="Booth">Walk-in Booth</option>
+
+
                                 </select>
                             </div>
                         </div>
 
-                        <div className="col-span-full">
+                        <div className="col-span-full pt-4">
                     
                     <button className="submit-btn" type='submit'>Submit</button>
 

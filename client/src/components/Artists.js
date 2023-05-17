@@ -30,6 +30,7 @@ function Artists(props) {
 
     const outputArtists = (artists) => {
         return (
+            <div className="artist-section">
             <div key={artists._id} className="artists">
 
                 <NavLink to='/artist'>View Band</NavLink>
@@ -38,7 +39,7 @@ function Artists(props) {
                 <div className="artist-info">
 
                 <h4>{artists.name}</h4>
-                <p>Members: {artists.artists}</p>
+                {/* <p>Members: {artists.artists}</p> */}
                 <p>Stage: {artists.stage}</p>
                 <p>Day: {artists.day}</p>
                 <p>Time: {artists.time}</p>
@@ -50,14 +51,16 @@ function Artists(props) {
             )} */}
             </div>
             </div>
+            </div>
         );
     }
     return (
         <>
-            
-            <h2>ARTISTS</h2>
 
-            <section className='artist-container'>
+            <section className="artist-container">
+
+            <h2 className="section-title">ARTISTS</h2>
+            <section className='artist-section'>
                 {artists.map(outputArtists)}
             </section>
 
@@ -70,6 +73,8 @@ function Artists(props) {
                 </NavLink>
                 )
             }
+
+            </section>
 
         </>
     )
