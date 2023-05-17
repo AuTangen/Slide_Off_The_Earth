@@ -28,8 +28,16 @@ html {
 }
 
 /* Global Classes */
+.app-container {
+  @apply w-full flex flex-col sm:flex-row flex-grow overflow-hidden;
+}
+
+.section-title {
+  @apply text-4xl text-center text-white font-bold bg-secondary rounded p-2 mx-auto mt-6;
+}
+
 body {
-  @apply flex flex-col min-h-screen bg-crowd bg-no-repeat bg-center bg-fixed;
+  @apply flex flex-col min-h-screen bg-crowd bg-no-repeat bg-center bg-fixed m-0;
 }
 
 main {
@@ -41,8 +49,8 @@ li {
   @apply cursor-pointer;
 }
 
-.section-wrap {
-  @apply container mx-auto grid md:grid-cols-2 items-center md:justify-between;
+.section-container {
+  @apply container flex flex-col items-center justify-center mx-auto w-80;
 }
 
 .section {
@@ -88,16 +96,21 @@ li a:hover {
 }
 
 /* Artists */
-.band-section {
-  @apply container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mx-auto;
+
+.artist-container {
+  @apply container flex flex-col w-full my-10;
+}
+
+.artist-section {
+  @apply container flex flex-col justify-center items-center w-full h-full gap-4 mx-auto py-8;
 }
 
 .artists {
-  @apply max-w-sm rounded overflow-hidden shadow-lg;
+  @apply max-w-sm rounded overflow-hidden shadow-lg bg-white;
 }
 
 .artist-info {
-  @apply px-6 pt-4 pb-2;
+  @apply px-6 pt-4 pb-2 text-center;
 }
 
 .artist-info h4 {
@@ -109,15 +122,15 @@ li a:hover {
   @apply text-4xl text-center;
 }
 .add-artist-container {
-  @apply space-y-12 w-full h-full px-6 mt-6 text-white;
+  @apply container flex flex-col w-full h-full px-6 my-auto text-white;
 }
 
 /* Footer */
-.footer-wrap {
+footer {
   @apply fixed inset-x-0 bottom-0;
 }
 
-.footer {
+.footer-wrap {
   @apply flex justify-between items-center px-5 bg-secondary text-white py-2;
 }
 
@@ -152,8 +165,20 @@ li a:hover {
     @apply flex py-0 px-2 w-[300px];
   }
 
-  .about-wrap {
-    @apply container mx-auto grid md:grid-cols-2 items-center justify-center md:justify-between;
+  .section-title {
+    @apply text-6xl text-center text-white font-bold bg-secondary rounded py-2 px-2 w-96 mx-auto;
+  }
+
+  .artist-section {
+    @apply container grid w-full h-full lg:grid-cols-2 gap-4 mx-auto py-8;
+  }
+
+  .artist-container {
+    @apply container flex flex-col items-center justify-center mx-auto px-10 py-40;
+  }
+
+  .add-artist-container {
+    @apply container flex flex-col w-full h-full px-6 mt-20 text-white;
   }
 
   .footer {

@@ -7,21 +7,21 @@ function AddVendor(props) {
         <>
             <div class='add-artist-container'>
 
-            <h2 className="text-4xl text-center">Add Vendor</h2>
+            <h2 className="section-title">Add Vendor</h2>
 
                 <form>
                     <div className="form-container">
                         <div className="col-span-full">
                             <label for="name">Vendor Name:</label>
                             <div className="mt-2">
-                                <input type='text' placeholder='Vendor Name'></input>
+                                <input className="form-element" type='text' placeholder='Vendor Name'></input>
                             </div>
                         </div>
                         
                         <div className="col-span-full">
                             <label for="category">Select a Category:</label>
                             <div className="mt-2"> 
-                                <select name="category" id="category"> 
+                                <select className="form-element" name="category" id="category"> 
                                 <option value="food">Food</option> 
                                 <option value="merch">Merchandise</option> 
                                 </select>
@@ -31,14 +31,14 @@ function AddVendor(props) {
                         <div className="col-span-full">
                             <label for="lot-size">Select Lot Size:</label>
                             <div className="mt-2">
-                                <select name="lot-size" id="lot-size">
+                                <select className="form-element" name="lot-size" id="lot-size">
                                     <option value="table">Table</option>
                                     <option value="walk-in">Walk-in Booth</option>
                                 </select>
                             </div>
                         </div>
 
-                        <div className="col-span-full">
+                        <div className="col-span-full pt-4">
                     
                     <button className="submit-btn" type='submit'>Submit</button>
 
