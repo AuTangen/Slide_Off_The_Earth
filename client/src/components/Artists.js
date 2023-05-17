@@ -21,7 +21,9 @@ function Artists(props) {
             const res = await axios.delete(`/api/artist/${artistID}`)
             console.log('deleted')
             console.log(res.data)
+
             setArtists(res.data.artists)
+
         } catch (err) {
             if (err.code === 402) {
                 console.log(err)
@@ -58,6 +60,7 @@ function Artists(props) {
     }
     return (
         <>
+
             <section className="artist-container">
 
             <h2 className="section-title">ARTISTS</h2>
@@ -69,7 +72,18 @@ function Artists(props) {
             {/* <div class='artist-container'>
                 <div>Band 1</div>
             </div> */}
+            {props.user && (
+                <NavLink to='/addartist'>
+                    <button 
+                        id='add-band'>
+                        Add Artist
+                    </button>
+                </NavLink>
+                )
+            }
+
             </section>
+
         </>
     )
 

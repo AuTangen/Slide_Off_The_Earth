@@ -46,7 +46,7 @@ function App(props) {
           <Route path='/register' element={!user ? <Register user={user} setUser={setUser}/>: <Navigate to="/"/> } />
           <Route path='/addartist' element={<AddArtist user={user} setUser={setUser}/> } />
           <Route path='/addvendor' element={<AddVendor user={user} setUser={setUser}/> } />
-          <Route path='/artist' element={<OneArtist user={user} setUser={setUser}/> } />
+          <Route path='/artist/:id' element={<OneArtist user={user} setUser={setUser}/> } />
           <Route path='/vendor' element={<OneVendor user={user} setUser={setUser}/> } />
         </Routes>
         </main>

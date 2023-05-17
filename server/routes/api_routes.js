@@ -124,8 +124,9 @@ router.delete('/artist/:id', isAuthenticated, async (req, res) => {
 
 
     await Band.findByIdAndDelete(new ObjectId(req.params.id))
+    const bands = await Band.find()
 
-    res.send({ message: 'Band successfully deleted!' })
+    res.send({ artists: bands })
 })
 
 
@@ -168,7 +169,11 @@ router.delete('/stage/:id', isAuthenticated, async (req, res) => {
 
 // ********VENDOR ROUTES********
 
-
+// Get all vendors
+router.get('/vendors', async (req, res) => {
+    const vendor = await Vendor.find()
+    res.send(vendor)
+})
 
 // Create a vendor
 router.post('/vendor', isAuthenticated, async (req, res) => {
