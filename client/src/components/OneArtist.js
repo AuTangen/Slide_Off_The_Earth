@@ -139,7 +139,7 @@ function OneArtist(props) {
                 <OutputArtist artist={artist} />
                 {showForm && (
                 <>
-            <h2 className="section-title">Update</h2>
+            {/* <h2 className="section-title">Update</h2> */}
             
 
                 <form className='update-form' onSubmit={updateBand}>
