@@ -1,6 +1,7 @@
 import { NavLink, useNavigate, useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { BsXSquareFill } from "react-icons/bs";
 
 function OneVendor(props) {
     const [showForm, setShowForm] = useState(false);
@@ -105,15 +106,18 @@ function OneVendor(props) {
 
 <div class='add-artist-container'>
 
-<h2 className="section-title">Add Vendor</h2>
+<h2 className="section-title">Update Vendor</h2>
 
-    <form onSubmit={updateVendor}>
-        <div className="form-container">
+    <form className='update-form' onSubmit={updateVendor}>
+        <div className="form-container update form">
+
+        <BsXSquareFill onClick={updateForm}/>
+
             <div className="col-span-full">
                 <label for="name">Vendor Name:</label>
                 <div className="mt-2">
 
-                    <input name='name' value={formState.name} onChange={handleChange} className='form-element' type='text' placeholder='Vendor Name'></input>
+                    <input name='name' value={formState.name} onChange={handleChange} className='form-element' type='text' placeholder={`${vendor.name}`}></input>
 
                 </div>
             </div>

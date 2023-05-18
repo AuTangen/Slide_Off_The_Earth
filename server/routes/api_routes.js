@@ -242,6 +242,23 @@ router.post('/vendor', isAuthenticated, async (req, res) => {
     }
 })
 
+// Update a vendor by id
+// update a band
+router.put('/vendor/:id', isAuthenticated, async (req, res) => {
+    const user_id = req.session.user_id
+    try {
+        const vendor = await Vendor.findByIdAndUpdate(new ObjectId(req.params.id),{
+            ...req.body,
+            user: user_id
+        },{new: true})
+        
+        res.send({vendors: vendor })
+        console.log({vendors: vendor })
+    } catch (err) {
+        res.status(500).send({ error: err })
+    }
+})
+
 // Delete a vendor
 router.delete('/vendor/:id', isAuthenticated, async (req, res) => {
     
