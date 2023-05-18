@@ -130,6 +130,31 @@ li a:hover {
   @apply container flex flex-col w-full h-full px-6 my-auto text-white;
 }
 
+/* Stages */
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.stage-container {
+  margin-top: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  border: solid white 5px;
+  max-width: 500px;
+  color: white;
+  
+  
+}
+
+.stage-container .img-wrap {
+  max-width: 500px
+}
+
 /* News */
 .news-wrap {
   @apply mt-4 p-4 bg-gray-800;
