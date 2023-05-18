@@ -16,7 +16,7 @@ function Vendors(props) {
 
     const outputVendors = (vendors) => {
         return (
-            <div key={vendors._id} className="vendors">
+            <div key={vendors._id} className="artist-info">
                 
                 <NavLink to={`/vendor/${vendors._id}`}> <h4>{vendors.name}</h4> </NavLink>
                 <p>Category: {vendors.category}</p>
@@ -29,21 +29,26 @@ function Vendors(props) {
     return (
         <>
 
-            <h2>VENDORS</h2>
+        <section className='artist-container'>
 
-            <section className='vendor-section'>
+            <h2 className="section-title" >VENDORS</h2>
+
+            <div className='artist-section'>
                 {vendors.map(outputVendors)}
-            </section>
+            </div>
 
             {props.user && (
                 <NavLink to='/addvendor'>
                     <button 
+                        className="add-artist-btn"
                         id='add-vendor'>
                         Add Vendor
                     </button>
                 </NavLink>
                 )
             }
+
+        </section>
 
         </>
     )
