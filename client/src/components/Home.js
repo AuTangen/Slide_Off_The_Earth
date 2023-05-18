@@ -34,7 +34,16 @@ function Home() {
         <>
            <section className="artist-container">
 
-            <h2 className="section-title">ARTISTS</h2>
+            <h2 className="section-title">Welcome!</h2>
+            
+            <NavLink to='/artists'
+                className={({ isActive, isPending }) =>
+                  isPending ? 'pending' : isActive ? 'active' : ''
+                }
+                >
+                    <button className='add-artist-btn'>View All Artists</button>
+                </NavLink>
+
             <section className='artist-section-home'>
                 {artists.map(outputArtists)}
             </section>
