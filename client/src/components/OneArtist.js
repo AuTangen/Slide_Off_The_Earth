@@ -7,13 +7,13 @@ import bando from '../assets/bando.jpg';
 function OneArtist(props) {
     const [showForm, setShowForm] = useState(false);
 
-  
+    const navigate = useNavigate()
 
   const updateForm = () => {
     setShowForm(!showForm);
   }
    
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
     const {id} = useParams();
     
     const [artist, setArtist] = useState({});

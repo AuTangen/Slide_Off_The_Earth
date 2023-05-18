@@ -17,27 +17,13 @@ function Vendors(props) {
     const outputVendors = (vendors) => {
         return (
             <div key={vendors._id} className="vendors">
-                <h4>{vendors.name}</h4>
+                
+                <NavLink to={`/vendor/${vendors._id}`}> <h4>{vendors.name}</h4> </NavLink>
                 <p>Category: {vendors.category}</p>
                 <p>Lot Size: {vendors.lotSize}</p>
-                <button onClick={() => deleteVendor(vendors._id)}>Delete</button>
+                
             </div>
         );
-    }
-
-    const deleteVendor = async (vendorID) => {
-       
-        try{
-            const res = await axios.delete(`/api/vendor/${vendorID}`)
-            console.log('deleted')
-            console.log(res.data)
-            setVendors(res.data.vendors);
-        } catch (err) {
-            if (err.code === 402) {
-                console.log(err)
-            }
-        }
-        
     }
 
     return (

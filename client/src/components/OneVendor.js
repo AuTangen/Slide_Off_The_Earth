@@ -3,8 +3,13 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 function OneVendor(props) {
-    // const navigate = useNavigate();
+    const [showForm, setShowForm] = useState(false);
 
+    const updateForm = () => {
+        setShowForm(!showForm);
+      }
+
+    const navigate = useNavigate();
     const {id} = useParams();
     
     const [vendor, setVendor] = useState({});
@@ -18,17 +23,75 @@ function OneVendor(props) {
             });
     }, []);
 
-    const OutputVendor = (props) => {
+    const deleteVendor = async (vendorID) => {
+       
+        try{
+            const res = await axios.delete(`/api/vendor/${vendorID}`)
+            console.log('deleted')
+            console.log(res.data)
+            setVendor({});
+            navigate('/vendors')
+        } catch (err) {
+            if (err.code === 402) {
+                console.log(err)
+            }
+        }
+        
+    }
+
+    const OutputVendor = ({vendor}) => {
         console.log('vendor', vendor)
-        console.log(props.vendor.name)
+        
         return (
-            <div key={props.vendor._id} className="vendors">
+            <div key={vendor._id} className="vendors">
                 
-                <h4>{props.vendor.name}</h4>
-                <p>Category: {props.vendor.category}</p>
-                <p>Lot Size: {props.vendor.lotSize}</p>
+                <h4>{vendor.name}</h4>
+                <p>Category: {vendor.category}</p>
+                <p>Lot Size: {vendor.lotSize}</p>
+                <div className='btn-div'>
+                    <button onClick={updateForm}>Update</button> 
+                   <button onClick={() =>   deleteVendor(vendor._id)}>Delete</button>
+                </div>
+                
             </div>
         );
+    }
+
+    const [formState, setFormState] = useState({
+        name: '',
+        category: '',
+        lotSize: ''
+    })
+
+    const handleChange = (event) => {
+        const prop = event.target.name
+        setFormState({
+            ...formState,
+            [prop]: event.target.value
+        });
+    }
+
+    const updateVendor = async (event) => {
+        event.preventDefault();
+        console.log('submitted!')
+        console.log(formState)
+        try {
+            const res = await axios.put(`/api/vendor/${id}`, formState);
+    
+            // props.setUser(res.data.user);
+    
+            setFormState({
+                name: '',
+                category: '',
+                lotSize: ''
+            })
+            setVendor(res.data.vendors);
+    
+        } catch (err) {
+            if (err.code === 402) {
+                console.log(err)
+            }
+        }
     }
 
     return (
@@ -38,10 +101,61 @@ function OneVendor(props) {
                 <OutputVendor vendor={vendor} />
             </section>
 
-            <div class='edit-delete-vendor-container'>
-                <button id='edit-vendor'>Edit</button>
-                <button id='delete-vendor'>Delete</button>
+           {showForm && (
+
+<div class='add-artist-container'>
+
+<h2 className="section-title">Add Vendor</h2>
+
+    <form onSubmit={updateVendor}>
+        <div className="form-container">
+            <div className="col-span-full">
+                <label for="name">Vendor Name:</label>
+                <div className="mt-2">
+
+                    <input name='name' value={formState.name} onChange={handleChange} className='form-element' type='text' placeholder='Vendor Name'></input>
+
+                </div>
             </div>
+            
+            <div className="col-span-full">
+                {/* <label for="category">Select a Category:</label> */}
+                <div className="mt-2"> 
+
+                    <select name="category" className='form-element' value={formState.category} onChange={handleChange} id="category"> 
+                    <option value=''>Select a Category</option>
+                    <option value="Food">Food</option> 
+                    <option value="Merchandise">Merchandise</option> 
+
+                    </select>
+                </div>
+            </div>
+
+            <div className="col-span-full">
+                {/* <label for="lotSize">Select Lot Size:</label> */}
+                <div className="mt-2">
+
+                    <select name="lotSize" className='form-element' value={formState.lotSize} onChange={handleChange} id="lotSize">
+                        <option value=''>Select a Lot Size</option>
+                        <option value="Table">Table</option>
+                        <option value="Booth">Walk-in Booth</option>
+
+
+                    </select>
+                </div>
+            </div>
+
+            <div className="col-span-full pt-4">
+        
+        <button className="submit-btn" type='submit'>Submit</button>
+
+        </div>
+        </div>
+
+    </form>
+</div>
+
+           )}
 
         </>
     )
