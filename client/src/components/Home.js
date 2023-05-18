@@ -36,7 +36,7 @@ function Home() {
         <>
            <section className="artist-container">
 
-            <h2>ARTISTS</h2>
+            <h2 className="section-title">ARTISTS</h2>
             <section className='artist-section'>
                 {artists.map(outputArtists)}
             </section>
