@@ -147,6 +147,38 @@ router.put('/artist/:id', isAuthenticated, async (req, res) => {
 // ********STAGE ROUTES********
 
 
+// Main Stage
+
+router.get('/mainstage', async (req, res) => {
+    
+    const Stage = "Main Stage"
+    const bands = await Band.find({stage: Stage })
+  
+    console.log(bands)
+    res.send(bands)
+});
+
+// Almost Famous Stage
+router.get('/almoststage', async (req, res) => {
+    
+    const Stage = "Almost Famous Stage"
+    const bands = await Band.find({stage: Stage })
+  
+    console.log(bands)
+    res.send(bands)
+});
+
+
+// Noob Stage
+router.get('/noobstage', async (req, res) => {
+    
+    const Stage = "Noob Stage"
+    const bands = await Band.find({stage: Stage })
+  
+    console.log(bands)
+    res.send(bands)
+});
+
 
 // Create a stage
 router.post('/stage', isAuthenticated, async (req, res) => {

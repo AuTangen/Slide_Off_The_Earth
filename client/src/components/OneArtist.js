@@ -54,13 +54,15 @@ function OneArtist(props) {
                 <img src={bando} alt="the band" className="w-full" />
                 <div className="artist-info">
 
-                <h4>{artist.name}</h4>
-                {/* <p>Members: {artists.artists}</p> */}
-                <p>Stage: {artist.stage}</p>
-                <p>Day: {artist.day}</p>
-                <p>Time: {artist.time}</p>
-                <p>Set List: {artist.setlist}</p>
-                <button onClick={() => deleteArtist(artist._id)}>Delete</button>
+
+                <h4>{artist.artist.name}</h4>
+                <p>Members: {artist.artist.artists}</p>
+                <p>Stage: {artist.artist.stage}</p>
+                <p>Day: {artist.artist.day}</p>
+                <p>Time: {artist.artist.time}</p>
+                <p>Set List: {artist.artist.setlist}</p>
+                <button onClick={() => deleteArtist(artist.artist._id)}>Delete</button>
+
                 <button onClick={updateForm}>Update</button>
 
                 {/* {props.user && (
@@ -106,6 +108,7 @@ function OneArtist(props) {
                 time: '',
                 setlist: ''
             })
+            setArtist(res.data.artists);
     
         } catch (err) {
             if (err.code === 402) {
@@ -143,14 +146,14 @@ function OneArtist(props) {
                     <div className="col-span-full mt-2">
                     <label for="name">Artist Name</label>
                     <div className='mt-1'>
-                    <input name='name' value={formState.name} onChange={handleChange} className="form-element" type='text' placeholder='Artist Name'></input>
+                    <input name='name' value={formState.name} onChange={handleChange} className="form-element" type='text' placeholder={`${artist.name}`}></input>
                         </div>            
                     </div>
                     
                     <div className="col-span-full mt-2">
                     <label for="artists" >Band Members</label>
                     <div className='mt-1'>
-                    <input name='artists' value={formState.artists} onChange={handleChange} className="form-element" type='text' placeholder='Band Members'></input>
+                    <input name='artists' value={formState.artists} onChange={handleChange} className="form-element" type='text' placeholder={`${artist.artists}`}></input>
                     </div>
                     </div>
 
@@ -181,7 +184,7 @@ function OneArtist(props) {
                     </div>
 
                     <div className="col-span-full mt-2">
-                    <textarea name='setlist' value={formState.setlist} onChange={handleChange} className="form-element my-4" placeholder='Set List'></textarea>
+                    <textarea name='setlist' value={formState.setlist} onChange={handleChange} className="form-element my-4" placeholder={`${artist.setlist}`}></textarea>
                     </div>
 
                     <div className="col-span-full">
