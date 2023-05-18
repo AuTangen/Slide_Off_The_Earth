@@ -25,7 +25,7 @@ function Artists(props) {
                 
                 <div className="artist-info">
 
-                <NavLink to='/artist/${artists._id}'><h4>{artists.name}</h4></NavLink>
+                <NavLink to={`/artist/${artists._id}`}><h4>{artists.name}</h4></NavLink>
                 {/* <p>Members: {artists.artists}</p> */}
                 <p>Stage: {artists.stage}</p>
                 <p>Day: {artists.day}</p>

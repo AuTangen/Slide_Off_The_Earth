@@ -47,7 +47,7 @@ function App(props) {
           <Route path='/addartist' element={<AddArtist user={user} setUser={setUser}/> } />
           <Route path='/addvendor' element={<AddVendor user={user} setUser={setUser}/> } />
           <Route path='/artist/:id' element={<OneArtist user={user} setUser={setUser}/> } />
-          <Route path='/vendor' element={<OneVendor user={user} setUser={setUser}/> } />
+          <Route path='/vendor/:id' element={<OneVendor user={user} setUser={setUser}/> } />
         </Routes>
         </main>
       <Footer />
