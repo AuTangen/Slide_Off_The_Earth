@@ -58,13 +58,13 @@ function OneArtist(props) {
                 <div className="artist-info">
 
 
-                <h4>{artist.artist.name}</h4>
-                <p>Members: {artist.artist.artists}</p>
-                <p>Stage: {artist.artist.stage}</p>
-                <p>Day: {artist.artist.day}</p>
-                <p>Time: {artist.artist.time}</p>
-                <p>Set List: {artist.artist.setlist}</p>
-                <button onClick={() => deleteArtist(artist.artist._id)}>Delete</button>
+                <h4>{artist.name}</h4>
+                <p>Members: {artist.artists}</p>
+                <p>Stage: {artist.stage}</p>
+                <p>Day: {artist.day}</p>
+                <p>Time: {artist.time}</p>
+                <p>Set List: {artist.setlist}</p>
+                <button onClick={() => deleteArtist(artist._id)}>Delete</button>
 
                 <button onClick={updateForm}>Update</button>
 
