@@ -11,7 +11,7 @@ function OneArtist(props) {
     setShowForm(!showForm);
   }
    
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
     const {id} = useParams();
     
     const [artist, setArtist] = useState({});
@@ -33,6 +33,7 @@ function OneArtist(props) {
             console.log('deleted')
             console.log(res.data)
             setArtist(res.data.artists);
+            navigate('/artists')
         } catch (err) {
             if (err.code === 402) {
                 console.log(err)
