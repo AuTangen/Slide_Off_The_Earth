@@ -73,6 +73,15 @@ form {
   @apply block w-full rounded-md bg-secondary px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-[#088395] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0A4D68];
 }
 
+/* Home */
+.sote-main {
+  @apply w-full rounded mx-auto max-w-md;
+}
+
+.sote-artists {
+  @apply w-full rounded mx-auto max-w-sm my-10;
+}
+
 /* Nav */
 .header {
   @apply flex w-screen justify-between items-center px-4;
@@ -96,6 +105,10 @@ li a:hover {
 }
 
 /* Home */
+.artist-container-home {
+  @apply w-full h-full flex flex-col align-middle items-center justify-center mx-auto pt-6;
+}
+
 .artist-section-home {
   @apply flex flex-col mx-auto gap-4 mt-10 mb-40;
 }
@@ -313,6 +326,14 @@ footer {
 
   .header {
     @apply fixed w-full h-[80px] flex justify-between items-center px-4 bg-secondary text-white;
+  }
+
+  .sote-main {
+    @apply w-full h-full rounded mx-auto my-40 max-w-6xl;
+  }
+
+  .sote-artists {
+    visibility: hidden;
   }
 
   .mobile-nav {
