@@ -1,19 +1,19 @@
-const path = require('path')
-require('dotenv').config({path: path.join(process.cwd(), './.env')});
+
+require('dotenv').config()
 const express = require('express');
 const session = require('express-session')
 const PORT = process.env.PORT || 3001;
 const db = require('./config/connection');
-
+const path = require('path')
 const api_routes = require('./routes/api_routes')
 const auth_routes = require('./routes/auth_routes')
 
-console.log(process.env.SESSION_SECRET)
+console.log(process.env.blah)
 
 const app = express();
 app.use(express.json())
 
-app.use(express.static('../client/build'));
+app.use(express.static('./client/build'));
 
 app.use(session({
     secret: process.env.SESSION_SECRET,
@@ -24,6 +24,9 @@ app.use(session({
 
 app.use('/api', api_routes)
 app.use('/auth', auth_routes)
+app.get('*', (req,res) => {
+  res.sendFile(path.join(process.cwd(), '../client/build/index.html'))
+})
 
 db.once('open', () => {
 app.listen(PORT, () => console.log('server started on port %s', PORT))
