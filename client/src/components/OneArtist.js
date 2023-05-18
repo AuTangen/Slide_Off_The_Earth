@@ -17,7 +17,7 @@ function OneArtist(props) {
     setSetList(!setList);
   }
    
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
     const {id} = useParams();
     
     const [artist, setArtist] = useState({});
