@@ -30,7 +30,7 @@ function Artists(props) {
                 <p>Stage: {artists.stage}</p>
                 <p>Day: {artists.day}</p>
                 <p>Time: {artists.time}</p>
-                <p>Set List: {artists.setlist}</p>
+                
                 
                 {/* {props.user && (
               drink.favorited ? <button disabled>Favorited</button> :
