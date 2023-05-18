@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import bando from '../assets/bando.jpg';
 
-function Home() {
+function Home({user, setUser}) {
     // const navigate = useNavigate();
     const [artists, setArtists] = useState([]);
 

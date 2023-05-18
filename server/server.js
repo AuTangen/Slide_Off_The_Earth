@@ -1,4 +1,5 @@
-require('dotenv').config();
+const path = require('path')
+require('dotenv').config({path: path.join(process.cwd(), './.env')});
 const express = require('express');
 const session = require('express-session')
 const PORT = process.env.PORT || 3001;
@@ -7,6 +8,7 @@ const db = require('./config/connection');
 const api_routes = require('./routes/api_routes')
 const auth_routes = require('./routes/auth_routes')
 
+console.log(process.env.SESSION_SECRET)
 
 const app = express();
 app.use(express.json())
