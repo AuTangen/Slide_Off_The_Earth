@@ -95,6 +95,11 @@ li a:hover {
   width: 11rem;
 }
 
+/* Home */
+.artist-section-home {
+  @apply flex flex-col mx-auto gap-4 mt-10 mb-40;
+}
+
 /* Artists */
 
 .artist-container {
@@ -106,7 +111,7 @@ li a:hover {
 }
 
 .artists {
-  @apply max-w-sm rounded overflow-hidden shadow-lg bg-white;
+  @apply mx-auto max-w-sm rounded overflow-hidden shadow-lg bg-white;
 }
 
 .artist-info {
@@ -160,6 +165,42 @@ li a:hover {
   height:fit-content;
   padding: 2%;
 }
+.one-artist-container {
+  @apply w-full h-full flex flex-col align-middle items-center justify-center mx-auto pb-40 mt-20 bg-black rounded;
+}
+
+.one-artist-section {
+  @apply flex flex-col mx-auto gap-4 mt-10;
+}
+
+.edit-delete-artist-container {
+  @apply grid grid-cols-2 gap-4 mx-auto max-w-md;
+}
+
+.edit-artist {
+  @apply block w-full rounded-md bg-primary px-3 text-sm font-semibold text-white shadow-sm hover:bg-[#05BFDB] hover:text-black;
+}
+
+.delete-artist {
+  @apply block w-full rounded-md bg-primary px-3 text-sm font-semibold text-white shadow-sm hover:bg-red-700 hover:text-white;
+}
+
+.one-artist {
+  @apply mx-auto w-full rounded overflow-hidden shadow-lg bg-white;
+}
+
+.one-artist h4 {
+  @apply text-4xl
+}
+
+.one-artist p {
+  @apply text-xl p-4;
+};
+
+.one-artist img {
+  @apply max-w-2xl mx-auto pt-6 pb-4 rounded;
+}
+
 /* Add Artist */
 
 .add-artist {
@@ -172,6 +213,7 @@ li a:hover {
 /* Stages */
 
 .page-container {
+  @apply container flex flex-col justify-center w-full mb-20;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -188,10 +230,19 @@ li a:hover {
   color: white;
  
   
+  @apply flex flex-col justify-center items-center w-full h-full gap-4 mx-auto my-4 p-4 text-center rounded bg-primary text-white max-w-sm;
 }
 
-.stage-container .img-wrap {
-  max-width: 500px
+.stage-container h3 {
+  @apply text-xl bg-secondary rounded p-2 border-2 border-cyan-800;
+}
+
+.stage-container .descr-container {
+  @apply w-full bg-accent rounded text-[#0A4D68];
+}
+
+.descr-container h2 {
+  @apply text-lg text-white bg-black;
 }
 
 .bandlink:hover {
@@ -280,12 +331,56 @@ footer {
     @apply container w-full h-full flex flex-col align-middle items-center justify-center mx-auto px-10 pt-20 pb-40;
   }
 
+  .one-artist-container {
+    @apply w-full h-full flex flex-col align-middle items-center justify-center mx-auto pb-40 mt-20 bg-black rounded;
+  }
+
+  .one-artist-section {
+    @apply flex flex-col mx-auto gap-4 mt-10;
+  }
+
+  .edit-delete-artist-container {
+    @apply grid grid-cols-2 gap-4 mx-auto max-w-md;
+  }
+
+  .edit-artist {
+    @apply block w-full rounded-md bg-primary px-3 text-sm font-semibold text-white shadow-sm hover:bg-[#05BFDB] hover:text-black;
+  }
+
+  .delete-artist {
+    @apply block w-full rounded-md bg-primary px-3 text-sm font-semibold text-white shadow-sm hover:bg-red-700 hover:text-white;
+  }
+  
+  .one-artist {
+    @apply mx-auto w-full rounded overflow-hidden shadow-lg bg-white;
+  }
+
+  .one-artist h4 {
+    @apply text-4xl
+  }
+
+  .one-artist p {
+    @apply text-xl p-4;
+  };
+
+  .one-artist img {
+    @apply max-w-2xl mx-auto pt-6 pb-4 rounded;
+  }
+
+  .form-container {
+    @apply: max-w-4xl;
+  } 
+
   .add-artist-btn {
     @apply block w-full rounded-md bg-primary mt-2 px-3 pt-2 text-sm font-semibold text-white shadow-sm hover:bg-[#05BFDB] hover:text-black ;
   }
+
+  .artist-section-home {
+    @apply grid grid-cols-4 mx-auto gap-4 mt-10 mb-40;
+  }
   
   .artist-section {
-    @apply grid xl:grid-cols-2 justify-center gap-1;
+    @apply grid grid-cols-3 mx-auto justify-center gap-4 mb-40;
   }
 
   .artist-card {
@@ -295,6 +390,18 @@ footer {
   .add-artist-container {
     @apply container flex flex-col w-full h-full mx-auto px-10 mt-20 text-white;
   }
+
+  .page-container {
+    @apply grid grid-cols-3 gap-4 mt-10 mb-40 mx-auto;
+  }
+
+  .stage-container {
+  @apply row-span-1 flex flex-col justify-center items-center w-full h-full my-4 p-4 text-center rounded bg-primary text-white max-w-md;
+}
+
+.stage-container h3 {
+  @apply text-xl bg-secondary rounded p-2 border-2 border-cyan-800;
+}
 
   .faq-wrap h2 {
     @apply text-4xl text-[#088395] font-bold;

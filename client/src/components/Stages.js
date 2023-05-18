@@ -1,7 +1,6 @@
 import { NavLink, useNavigate, useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import bando from '../assets/bando.jpg';
 import mainStage from '../assets/main_stage.jpeg';
 import almostStage from '../assets/almost_famous.jpeg';
 import noobStage from '../assets/noob_stage.jpeg';
@@ -68,8 +67,10 @@ function Stages(props) {
 
     return (
         <>
+        <div class="add-artist-container">
+        <h2 className="section-title">STAGES</h2>
             <section className='page-container'>
-                <h2>STAGES</h2>
+                
 
 
 
@@ -117,6 +118,7 @@ function Stages(props) {
 
 
             </section>
+            </div>
         </>
     )
 
