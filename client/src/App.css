@@ -111,7 +111,7 @@ li a:hover {
 }
 
 .artists {
-  @apply mx-auto max-w-sm rounded overflow-hidden shadow-lg bg-white;
+  @apply mx-auto mt-4 max-w-sm rounded overflow-hidden shadow-lg bg-white;
 }
 
 .artist-info {
