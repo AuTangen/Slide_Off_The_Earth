@@ -121,6 +121,45 @@ li a:hover {
   @apply block w-40 mx-auto mb-4 rounded-md bg-primary mt-2 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-[#05BFDB] hover:text-black ;
 }
 
+/* One Artist */
+
+.crud-button-wrap {
+  display: flex;
+  justify-content: space-between
+}
+
+.crud-button-wrap button {
+  background-color:#088395;
+  color: white;
+  padding: 2%;
+  border-radius: 5px
+}
+
+.crud-button-wrap button:hover {
+  background-color: #0A4D68
+}
+
+.setlist-btn {
+  background-color: black;
+  color: white;
+  padding: 0 2%;
+  border-radius: 5px;
+}
+
+.update-form {
+  background-color: #088395;
+  border-radius: 8px;
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 10%;
+  top: 40%;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  max-width: 400px;
+  height:fit-content;
+  padding: 2%;
+}
 /* Add Artist */
 
 .add-artist {
