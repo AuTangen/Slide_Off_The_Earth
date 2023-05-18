@@ -16,6 +16,12 @@ function OneArtist(props) {
   const showSetList = () => {
     setSetList(!setList);
   }
+
+  const [showButton, setShowButton] =useState(false)
+
+  const toggleSetButton = () => {
+    setShowButton(!showButton)
+  }
    
     const navigate = useNavigate();
     const {id} = useParams();
@@ -56,8 +62,6 @@ function OneArtist(props) {
             <div className="one-artist-section">
             <div key={artist._id} className="one-artist">
 
-                
-
                 <img src={bando} alt="the band" className="w-full" />
                 {props.user && (
                 <div class='edit-delete-artist-container'>
@@ -71,7 +75,8 @@ function OneArtist(props) {
                 <p>Stage: {artist.stage}</p>
                 <p>Day: {artist.day}</p>
                 <p>Time: {artist.time}</p>
-                <button className='setlist-btn' onClick={showSetList}>Show Set List</button>
+                
+                <button className='setlist-btn' onClick={showSetList}>{setList ? 'Hide Set List' : 'Show Set List'}</button>
               {setList && <p>Set List: {artist.setlist}</p>}
 
                 {/* {props.user && (
@@ -134,7 +139,7 @@ function OneArtist(props) {
                 <OutputArtist artist={artist} />
                 {showForm && (
                 <>
-            <h2 className="section-title">Update</h2>
+            {/* <h2 className="section-title">Update</h2> */}
             
 
                 <form className='update-form' onSubmit={updateBand}>

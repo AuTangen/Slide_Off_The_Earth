@@ -1,6 +1,8 @@
 import { NavLink, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import bando from '../assets/bando.jpg';
+import vendorimg from '../assets/vendor_stock.jpg';
 
 function Vendors(props) {
     // const navigate = useNavigate();
@@ -16,12 +18,18 @@ function Vendors(props) {
 
     const outputVendors = (vendors) => {
         return (
-            <div key={vendors._id} className="artist-info">
+            <div key={vendors._id} className="artists">
                 
+                <NavLink to={`/vendor/${vendors._id}`}><img src={vendorimg} alt="vendor" className="w-full zoom" /></NavLink>
+
+                <div className="artist-info">
+
                 <NavLink to={`/vendor/${vendors._id}`}> <h4>{vendors.name}</h4> </NavLink>
                 <p>Category: {vendors.category}</p>
                 <p>Lot Size: {vendors.lotSize}</p>
                 
+                </div>
+
             </div>
         );
     }
