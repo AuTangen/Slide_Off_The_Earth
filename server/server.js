@@ -25,7 +25,7 @@ app.use(session({
 app.use('/api', api_routes)
 app.use('/auth', auth_routes)
 app.get('*', (req,res) => {
-  res.sendFile(path.join(process.cwd(), '../client/build/index.html'))
+  res.sendFile(path.join(__dirname, '../client/build/index.html'))
 })
 
 db.once('open', () => {
