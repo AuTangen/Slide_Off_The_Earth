@@ -147,12 +147,27 @@ li a:hover {
   border: solid white 5px;
   max-width: 500px;
   color: white;
-  
+ 
   
 }
 
 .stage-container .img-wrap {
   max-width: 500px
+}
+
+.bandlink:hover {
+  @apply text-yellow-500;
+}
+
+.zoom {
+  
+  transition: transform 0.4s ease;
+    transform-origin: 50% 50%;
+}
+
+.zoom:hover {
+  transform: scale(1.1);
+   
 }
 
 /* News */

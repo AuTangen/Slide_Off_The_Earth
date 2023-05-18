@@ -43,7 +43,7 @@ function Stages(props) {
         console.log(bands.name)
         return (
 
-            <p key={bands._id} className="">{bands.name}</p>
+            <NavLink to={`/artist/${bands._id}`}><p key={bands._id} className="bandlink">{bands.name}</p></NavLink>
         )
     }
 
@@ -52,7 +52,7 @@ function Stages(props) {
         console.log(bands.name)
         return (
 
-            <p key={bands._id} className="">{bands.name}</p>
+            <NavLink to={`/artist/${bands._id}`}><p key={bands._id} className="bandlink">{bands.name}</p></NavLink>
         )
     }
 
@@ -61,7 +61,7 @@ function Stages(props) {
         console.log(bands.name)
         return (
 
-            <p key={bands._id} className="">{bands.name}</p>
+            <NavLink to={`/artist/${bands._id}`}><p key={bands._id} className="bandlink">{bands.name}</p></NavLink>
         )
     }
     // const navigate = useNavigate();

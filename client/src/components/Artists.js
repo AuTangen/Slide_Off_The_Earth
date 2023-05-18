@@ -20,7 +20,7 @@ function Artists(props) {
         return (
             <div key={artists._id} className="artists">
 
-                <NavLink to={`/artist/${artists._id}`}><img src={bando} alt="the band" className="w-full" /></NavLink>
+                <NavLink to={`/artist/${artists._id}`}><img src={bando} alt="the band" className="w-full zoom" /></NavLink>
 
                 
                 <div className="artist-info">
