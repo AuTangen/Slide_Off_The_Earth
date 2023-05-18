@@ -122,6 +122,7 @@ router.delete('/artist/:id', isAuthenticated, async (req, res) => {
 
     await Band.findByIdAndDelete(new ObjectId(artist_id))
 
+    res.send({message: 'Artist deleted successfully.'})
     // res.redirect('/artists');
     console.log({artists: artist_id })
 })

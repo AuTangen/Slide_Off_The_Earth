@@ -7,6 +7,8 @@ import bando from '../assets/bando.jpg';
 function OneArtist(props) {
     const [showForm, setShowForm] = useState(false);
 
+    const navigate = useNavigate()
+
   const updateForm = () => {
     setShowForm(!showForm);
   }
@@ -32,7 +34,8 @@ function OneArtist(props) {
             const res = await axios.delete(`/api/artist/${artistID}`)
             console.log('deleted')
             console.log(res.data)
-            setArtist(res.data);
+            setArtist({});
+            navigate('/artists')
         } catch (err) {
             if (err.code === 402) {
                 console.log(err)
