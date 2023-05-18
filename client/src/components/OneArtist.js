@@ -6,9 +6,9 @@ import { BsXSquareFill } from "react-icons/bs";
 
 function OneArtist(props) {
     const [showForm, setShowForm] = useState(false);
+
     const [setList, setSetList] = useState(false);
    
-
   const updateForm = () => {
     setShowForm(!showForm);
   }
@@ -17,7 +17,7 @@ function OneArtist(props) {
     setSetList(!setList);
   }
    
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
     const {id} = useParams();
     
     const [artist, setArtist] = useState({});

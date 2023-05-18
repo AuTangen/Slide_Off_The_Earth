@@ -122,7 +122,7 @@ router.delete('/artist/:id', isAuthenticated, async (req, res) => {
 
     await Band.findByIdAndDelete(new ObjectId(artist_id))
 
-    res.send({message: 'Artist deleted successfully.'})
+    res.send({message: 'Artist was deleted successfully.'})
     // res.redirect('/artists');
     console.log({artists: artist_id })
 })
@@ -221,6 +221,15 @@ router.get('/vendors', async (req, res) => {
     res.send(vendor)
 })
 
+// Get one vendor by id
+router.get('/vendors/:id', async (req, res) => {
+    // const band = await Band.findOne({name: req.params.name })
+    const vendor = await Vendor.findById(new ObjectId(req.params.id))
+ 
+    console.log(vendor)
+    res.send(vendor)
+});
+
 // Create a vendor
 router.post('/vendor', isAuthenticated, async (req, res) => {
     try {
@@ -233,7 +242,6 @@ router.post('/vendor', isAuthenticated, async (req, res) => {
     }
 })
 
-
 // Delete a vendor
 router.delete('/vendor/:id', isAuthenticated, async (req, res) => {
     
@@ -242,6 +250,8 @@ router.delete('/vendor/:id', isAuthenticated, async (req, res) => {
     await Vendor.findByIdAndDelete(new ObjectId(vendor_id))
 
     res.send({ message: 'Vendor was successfully deleted.'  })
+
+    console.log({vendors: vendor_id})
 })
 
 // router.delete('/vendor/:id', isAuthenticated, async (req, res) => {
