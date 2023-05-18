@@ -98,28 +98,28 @@ function Header(props) {
             Welcome, {props.user.username}
           </li>}
           <li className='py-6 text-4xl'>
-            <NavLink to='/'>Home</NavLink>
+            <NavLink onClick={handleClick} to='/'>Home</NavLink>
           </li>
           <li className='py-6 text-4xl'>
-            <NavLink to='/artists'>Artists</NavLink>
+            <NavLink onClick={handleClick} to='/artists'>Artists</NavLink>
           </li>
           <li className='py-6 text-4xl'>
-            <NavLink to='/stages'>Stages</NavLink>
+            <NavLink onClick={handleClick} to='/stages'>Stages</NavLink>
           </li>
           <li className='py-6 text-4xl'>
-            <NavLink to='/vendors'>Vendors</NavLink>
+            <NavLink onClick={handleClick} to='/vendors'>Vendors</NavLink>
           </li>
           <li className='py-6 text-4xl'>
-            <NavLink to='/news'>News</NavLink>
+            <NavLink onClick={handleClick} to='/news'>News</NavLink>
           </li>
           <li className='py-6 text-4xl'>
-          <NavLink to='./faq'>FAQ</NavLink>
+          <NavLink onClick={handleClick} to='./faq'>FAQ</NavLink>
           </li>
           <li className='py-6 text-4xl'>
             {props.user ? (
               <NavLink onClick={logout} to="/auth/logout" >Logout</NavLink>
             ) : (
-              <NavLink to='/login'>Login</NavLink>
+              <NavLink onClick={handleClick} to='/login'>Login</NavLink>
             )}
           </li>
         </ul>
