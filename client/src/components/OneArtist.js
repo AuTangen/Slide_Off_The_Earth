@@ -53,21 +53,19 @@ function OneArtist(props) {
         console.log('artist', artist)
 
         return (
-            <div className="artist-section">
-            <div key={artist._id} className="artists">
+            <div className="one-artist-section">
+            <div key={artist._id} className="one-artist">
 
                 
 
                 <img src={bando} alt="the band" className="w-full" />
+                {props.user && (
+                <div class='edit-delete-artist-container'>
+                <button onClick={updateForm} id='edit-artist' className="edit-artist">Update Info</button>
+                <button onClick={() => deleteArtist(artist._id)} id='delete-artist' className="delete-artist">Delete</button>
+            </div>)}
                 <div className="artist-info">
 
-                {props.user &&
-                <div className='crud-button-wrap'>
-                <button onClick={() => deleteArtist(artist._id)}>Delete</button>
-
-                <button onClick={updateForm}>Update</button>
-                </div>
-    }
                 <h4>{artist.name}</h4>
                 <p>Members: {artist.artists}</p>
                 <p>Stage: {artist.stage}</p>
@@ -131,21 +129,12 @@ function OneArtist(props) {
     return (
         <>
 
-
-
-          
-
-            <section className='artist-container'>
+            <section className='one-artist-container'>
                 {/* {OutputArtist} */}
                 <OutputArtist artist={artist} />
-            </section>
-
-            {showForm && (
-        
-      
-            <div class='add-artist-container'>
-
-            <h2 className="section-title">Update Artist</h2>
+                {showForm && (
+                <>
+            <h2 className="section-title">Update</h2>
             
 
                 <form className='update-form' onSubmit={updateBand}>
@@ -201,8 +190,11 @@ function OneArtist(props) {
                     </div>
                     </div>
                 </form>
-            </div>
+</>
 )}
+            </section>
+
+           
 
 
         </>

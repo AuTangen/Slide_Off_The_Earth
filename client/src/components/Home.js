@@ -22,11 +22,9 @@ function Home() {
                 <img src={bando} alt="the band" className="w-full" />
                 <div className="artist-info">
                 <h4>{artists.name}</h4>
-                <p>Members: {artists.artists}</p>
                 <p>Stage: {artists.stage}</p>
                 <p>Day: {artists.day}</p>
                 <p>Time: {artists.time}</p>
-                <p>Set List: {artists.setlist}</p>
             </div>
             </div>
         );
@@ -37,7 +35,7 @@ function Home() {
            <section className="artist-container">
 
             <h2 className="section-title">ARTISTS</h2>
-            <section className='artist-section'>
+            <section className='artist-section-home'>
                 {artists.map(outputArtists)}
             </section>
 
