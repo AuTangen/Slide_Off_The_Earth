@@ -2,15 +2,19 @@ import { NavLink, useNavigate, useParams, } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import bando from '../assets/bando.jpg';
-
+import { BsXSquareFill } from "react-icons/bs";
 
 function OneArtist(props) {
     const [showForm, setShowForm] = useState(false);
-
-  
+    const [setList, setSetList] = useState(false);
+   
 
   const updateForm = () => {
     setShowForm(!showForm);
+  }
+
+  const showSetList = () => {
+    setSetList(!setList);
   }
    
     const navigate = useNavigate();
@@ -57,16 +61,20 @@ function OneArtist(props) {
                 <img src={bando} alt="the band" className="w-full" />
                 <div className="artist-info">
 
+                {props.user &&
+                <div className='crud-button-wrap'>
+                <button onClick={() => deleteArtist(artist._id)}>Delete</button>
 
+                <button onClick={updateForm}>Update</button>
+                </div>
+    }
                 <h4>{artist.name}</h4>
                 <p>Members: {artist.artists}</p>
                 <p>Stage: {artist.stage}</p>
                 <p>Day: {artist.day}</p>
                 <p>Time: {artist.time}</p>
-                <p>Set List: {artist.setlist}</p>
-                <button onClick={() => deleteArtist(artist._id)}>Delete</button>
-
-                <button onClick={updateForm}>Update</button>
+                <button className='setlist-btn' onClick={showSetList}>Show Set List</button>
+              {setList && <p>Set List: {artist.setlist}</p>}
 
                 {/* {props.user && (
               drink.favorited ? <button disabled>Favorited</button> :
@@ -125,11 +133,7 @@ function OneArtist(props) {
 
 
 
-            <div class='edit-delete-artist-container'>
-                <button id='edit-artist'>Edit</button>
-                <button id='delete-artist'>Delete</button>
-            </div>
-
+          
 
             <section className='artist-container'>
                 {/* {OutputArtist} */}
@@ -144,8 +148,10 @@ function OneArtist(props) {
             <h2 className="section-title">Update Artist</h2>
             
 
-                <form onSubmit={updateBand}>
-                <div class="form-container">
+                <form className='update-form' onSubmit={updateBand}>
+                    
+                <div class="form-container update-form">
+               <BsXSquareFill onClick={updateForm}/>
                     <div className="col-span-full mt-2">
                     <label for="name">Artist Name</label>
                     <div className='mt-1'>
