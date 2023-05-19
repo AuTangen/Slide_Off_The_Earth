@@ -38,7 +38,11 @@ Run the following commands in the terminal of the root folder
 
 3) Navigate to the Stages and Vendors pages to view all stages and vendors for the festival.
 
-![Heroku Link](https://warm-inlet-30953.herokuapp.com/)
+---  
+
+## Deployed App 
+
+[Heroku Link](https://warm-inlet-30953.herokuapp.com/)
 
 ---
 
