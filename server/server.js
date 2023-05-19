@@ -26,3 +26,4 @@ app.use('/auth', auth_routes)
 db.once('open', () => {
 app.listen(PORT, () => console.log('server started on port %s', PORT))
 });
+
