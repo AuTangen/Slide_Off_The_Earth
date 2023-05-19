@@ -8,7 +8,7 @@ Provided a user is registered, they can add, update and delete artists and vendo
 
 Deployed Application Screenshot:
 
-![Deployed Application Screenshot](client/src/assets/SCREENSHOT.png)
+[Deployed Application Screenshot](client/src/assets/SCREENSHOT.png)
 
 ---
 
